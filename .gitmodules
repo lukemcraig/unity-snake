@@ -1,0 +1,4 @@
+[submodule "Assets/EgoCS"]
+	path = Assets/EgoCS
+	url = https://github.com/andoowhy/EgoCS.git
+	ignore = dirty
