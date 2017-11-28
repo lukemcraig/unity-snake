@@ -15,7 +15,7 @@ EgoConstraint<Transform, AIMoverComponent, CommandComponent, MovementComponent, 
     {
         constraint.ForEachGameObject((egoComponent, transform, aimover, command, movement, snakePart) =>
         {
-            aimover.movementStrategy.Move(transform, command, movement, snakePart);
+            aimover.movementStrategy.Move(transform, command, movement);
         });
     }
 
