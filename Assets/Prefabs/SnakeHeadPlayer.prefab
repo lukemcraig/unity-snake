@@ -27,6 +27,10 @@ GameObject:
   - component: {fileID: 114627823946338086}
   - component: {fileID: 114383748892741250}
   - component: {fileID: 114512595757459690}
+  - component: {fileID: 114852939425808036}
+  - component: {fileID: 54758428385944760}
+  - component: {fileID: 114719589472660000}
+  - component: {fileID: 114434468127730074}
   m_Layer: 0
   m_Name: SnakeHeadPlayer
   m_TagString: Untagged
@@ -61,7 +65,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 35cd8244b1fa84f13a235e4f3c1e7f07, type: 2}
+  - {fileID: 2100000, guid: b645334bb5e5d4bb58f28d3bababd7d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,6 +92,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065938242863216}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54758428385944760
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65697033362751226
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -95,10 +114,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065938242863216}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114122075176810484
 MonoBehaviour:
@@ -127,6 +146,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &114434468127730074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41be7b67f0bac1549830563ef6155c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114512595757459690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,3 +196,25 @@ MonoBehaviour:
   right: 100
   up: 101
   down: 113
+--- !u!114 &114719589472660000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae9ba791de15ab458fd2f41cbba575c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114852939425808036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c77cc9e4c4424f7f9ae7111bb496576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
