@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa5d74fcd43a427fb7e47bfcede52a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDirection: {x: 0, y: 0, z: 1}
+  movementDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &114372777681100140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPregnant: 0
   childPart: {fileID: 0}
+  snakePrefab: {fileID: 0}
