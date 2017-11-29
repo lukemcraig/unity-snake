@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu (menuName = "Strategies/Movement/Random")]
 public class MSRandom : MovementStrategy {
-    public override void Move(Transform transform,  CommandComponent command, MovementComponent movement, SnakePartComponent snakePart){
-        DoRandomStuff(transform, command, movement, snakePart);
+    public override void Move(Transform transform,  CommandComponent command, MovementComponent movement){
+        DoRandomStuff(transform, command, movement);
     }
 
-    private void DoRandomStuff(Transform transform,  CommandComponent command, MovementComponent movement, SnakePartComponent snakePart) {
-        switch (Random.Range(0, 4)) {
-            case 0:
-                snakePart.isPregnant = true;
-                break;
-            default:
-                break;
-        }
+    private void DoRandomStuff(Transform transform,  CommandComponent command, MovementComponent movement) {
 
         if (transform.position.y < 0) {
             if (movement.movementDirection != Vector3.down) {

@@ -12,9 +12,11 @@ public class MyEgoInterface : EgoInterface
 			new MovementSystem(),
 			new AIMoverSystem(),
 			new SnakeHeadSystem(),
-			new SnakePartSystem()
+			new SnakePartSystem(),
+			new EdibleCollisionSystem()
         );	
 		EgoEvents.AddFront<TickEvent>();
+		EgoEvents.AddFront<CollisionEnterEvent>();
     }
 
     void Start()
