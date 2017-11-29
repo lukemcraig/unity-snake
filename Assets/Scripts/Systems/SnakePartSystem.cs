@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakePartSystem : EgoSystem<
-EgoConstraint<Transform, SnakePartComponent>
+EgoConstraint<MovementComponent, SnakePartComponent>
 >{
 	public override void Start()
 	{      
@@ -13,14 +13,15 @@ EgoConstraint<Transform, SnakePartComponent>
 
 	void Handle( TickEvent e )
 	{
-		constraint.ForEachGameObject( ( egoComponent, transform, snakePart ) =>
+		constraint.ForEachGameObject( ( egoComponent, movement, snakePart ) =>
 			{
 				if (snakePart.childPart != null) {	
 					var childEgoComponent = snakePart.childPart.gameObject.GetComponent<EgoComponent>();
 					MovementComponent childMovement;
 					if( childEgoComponent.TryGetComponents(out childMovement) )
 					{
-						childMovement.positionQueue.Enqueue (transform.position);
+//						childMovement.positionQueue.Enqueue (transform.position);
+						childMovement.nextMovement = movement.movementDirection;
 					}
 				}
 			} );

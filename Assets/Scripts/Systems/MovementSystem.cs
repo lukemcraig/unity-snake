@@ -15,10 +15,11 @@ EgoConstraint<Transform, MovementComponent>
 	{
 		constraint.ForEachGameObject( ( egoComponent, transform, movement) =>
 			{				
-				if (movement.positionQueue.Count > 0) {
-					Vector3 nextPosition = movement.positionQueue.Dequeue ();
-					transform.position = nextPosition;
-				}
+//				if (movement.positionQueue.Count > 0) {
+//					Vector3 nextPosition = movement.positionQueue.Dequeue ();
+				movement.movementDirection = movement.nextMovement;
+				transform.position += movement.movementDirection;
+//				}
 			} );
 	}
 }

@@ -9,11 +9,12 @@ public class MyEgoInterface : EgoInterface
         EgoSystems.Add(
 			new DelayColliderSystem(),
 			new TickSystem(),
-			new InputSystem(),
-			new MovementSystem(),
+			new InputSystem(),		
 			new AIMoverSystem(),
 			new SnakeHeadSystem(),
+			new SnakePregnancySystem(),
 			new SnakePartSystem(),	
+			new MovementSystem(),
 			new EdibleCollisionSystem(),
 			new ObstacleCollisionSystem()
         );	

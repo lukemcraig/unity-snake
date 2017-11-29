@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114432326735628418}
   - component: {fileID: 114639978123802062}
   - component: {fileID: 54502710576999454}
+  - component: {fileID: 114679502706126730}
   m_Layer: 0
   m_Name: SnakePartPrefab
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0, z: 0}
+  nextMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &114372777681100140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPregnant: 0
   childPart: {fileID: 0}
-  snakePrefab: {fileID: 0}
+  snakePrefab: {fileID: 1033600431772952}
 --- !u!114 &114432326735628418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,3 +166,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ready: 0
+--- !u!114 &114679502706126730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033600431772952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41be7b67f0bac1549830563ef6155c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
