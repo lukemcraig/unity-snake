@@ -143,6 +143,8 @@ MonoBehaviour:
   isPregnant: 0
   childPart: {fileID: 0}
   snakePrefab: {fileID: 1033600431772952}
+  pregnantMaterial: {fileID: 2100000, guid: 662e1c25785334e978b0a8b73e86041f, type: 2}
+  normalMaterial: {fileID: 2100000, guid: 35cd8244b1fa84f13a235e4f3c1e7f07, type: 2}
 --- !u!114 &114432326735628418
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -135,6 +135,8 @@ MonoBehaviour:
   childPart: {fileID: 0}
   snakePrefab: {fileID: 1033600431772952, guid: ae30fea6fdec844e7943d9883975c2e5,
     type: 2}
+  pregnantMaterial: {fileID: 2100000, guid: 662e1c25785334e978b0a8b73e86041f, type: 2}
+  normalMaterial: {fileID: 2100000, guid: b645334bb5e5d4bb58f28d3bababd7d5, type: 2}
 --- !u!114 &114153708518712592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0, z: 0}
+  nextMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &114565462626127906
 MonoBehaviour:
   m_ObjectHideFlags: 1

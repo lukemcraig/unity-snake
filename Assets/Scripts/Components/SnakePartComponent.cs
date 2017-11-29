@@ -7,4 +7,7 @@ public class SnakePartComponent : MonoBehaviour {
 	public bool isPregnant = false;
 	public SnakePartComponent childPart;
 	public GameObject snakePrefab;
+	public Material pregnantMaterial;
+	public Material normalMaterial;
+	public Transform container;
 }
