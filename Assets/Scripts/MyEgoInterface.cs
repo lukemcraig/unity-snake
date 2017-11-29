@@ -7,16 +7,18 @@ public class MyEgoInterface : EgoInterface
 	{
 //        Add Systems here:
         EgoSystems.Add(
+			new DelayColliderSystem(),
 			new TickSystem(),
 			new InputSystem(),
 			new MovementSystem(),
 			new AIMoverSystem(),
 			new SnakeHeadSystem(),
-			new SnakePartSystem(),
-			new EdibleCollisionSystem()
+			new SnakePartSystem(),	
+			new EdibleCollisionSystem(),
+			new ObstacleCollisionSystem()
         );	
 		EgoEvents.AddFront<TickEvent>();
-		EgoEvents.AddFront<CollisionEnterEvent>();
+		EgoEvents.AddFront<TriggerEnterEvent>();
     }
 
     void Start()

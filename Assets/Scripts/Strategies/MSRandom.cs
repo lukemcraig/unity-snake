@@ -101,12 +101,18 @@ public class MSRandom : MovementStrategy {
     bool TryToSetMovementDirection(Vector3 newDir, Queue<Vector3> inputQueue, Transform transform) {
         Vector3 fwd = transform.TransformDirection(newDir);
         Debug.DrawRay(transform.position, fwd, Color.green);
-        if (Physics.Raycast(transform.position, fwd, 0.5f)) {
-            return false;
-        } else {
-            SetMovementDirection(newDir, inputQueue);
-            return true;
-        }
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, fwd, out hit, 0.5f)) {
+			var egoComponent = hit.collider.GetComponent<EgoComponent>();
+			if (egoComponent != null) {
+				if(egoComponent.HasComponents<ObstacleComponent>()){
+					return false;
+				}
+			}
+		}
+        SetMovementDirection(newDir, inputQueue);
+        return true;
+
     }
 
     void SetMovementDirection(Vector3 newDir, Queue<Vector3> inputQueue) {
