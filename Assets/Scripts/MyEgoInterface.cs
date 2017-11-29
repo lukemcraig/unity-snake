@@ -12,8 +12,9 @@ public class MyEgoInterface : EgoInterface
 			new MovementSystem(),
 			new AIMoverSystem(),
 			new SnakeHeadSystem(),
-			new SnakePartSystem(),
+			new SnakePartSystem(),	
 			new EdibleCollisionSystem(),
+			new DelayColliderSystem(),
 			new ObstacleCollisionSystem()
         );	
 		EgoEvents.AddFront<TickEvent>();

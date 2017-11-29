@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65160245416704338}
   - component: {fileID: 114372777681100140}
   - component: {fileID: 114313943393297604}
+  - component: {fileID: 114432326735628418}
+  - component: {fileID: 114639978123802062}
   m_Layer: 0
   m_Name: SnakePartPrefab
   m_TagString: Untagged
@@ -92,8 +94,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033600431772952}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
@@ -123,3 +125,26 @@ MonoBehaviour:
   isPregnant: 0
   childPart: {fileID: 0}
   snakePrefab: {fileID: 0}
+--- !u!114 &114432326735628418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033600431772952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76bc3fa8b7b440ee9a24516e71a45c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114639978123802062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033600431772952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f302e0e419345949a87aaba5eb08b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 1

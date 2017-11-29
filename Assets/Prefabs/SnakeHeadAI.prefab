@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 114586245283690110}
   - component: {fileID: 114718299695938086}
   - component: {fileID: 114854138828961878}
+  - component: {fileID: 114153708518712592}
   m_Layer: 0
   m_Name: SnakeHeadAI
   m_TagString: Untagged
@@ -134,6 +135,17 @@ MonoBehaviour:
   childPart: {fileID: 0}
   snakePrefab: {fileID: 1033600431772952, guid: ae30fea6fdec844e7943d9883975c2e5,
     type: 2}
+--- !u!114 &114153708518712592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76bc3fa8b7b440ee9a24516e71a45c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114312075673872712
 MonoBehaviour:
   m_ObjectHideFlags: 1
