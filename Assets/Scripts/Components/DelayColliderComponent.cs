@@ -5,6 +5,6 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class DelayColliderComponent : MonoBehaviour {
 
-	public float delayTime;
+	public bool ready = false;
 
 }
