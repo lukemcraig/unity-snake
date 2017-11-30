@@ -24,8 +24,18 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 				else{
 					commandList = new List<ICommand>();
 					commandList.Add(e.command);
-					commandManager.commandDictionary.Add(tick.currentTick,commandList);
+					commandManager.commandDictionary.Add(e.tickToExecuteOn,commandList);
 					Debug.Log("added command to new list");
+					List<ICommand> commandListDebug = new List<ICommand>();
+					if(commandManager.commandDictionary.TryGetValue(tick.currentTick, out commandListDebug)){
+						Debug.Log("and got it back");
+						foreach(ICommand command in commandListDebug){
+							Debug.Log("and it was " + command.ToString());
+						}
+					}
+					else{
+						Debug.Log("and didn't get it back");
+					}
 				}
 			});
 	}
