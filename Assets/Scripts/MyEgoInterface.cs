@@ -9,6 +9,7 @@ public class MyEgoInterface : EgoInterface
         EgoSystems.Add(
 			new DelayColliderSystem(),
 			new TickSystem(),
+			new CommandManagerSystem(),
 			new SnakePregnancyVisualSystem(),
 			new InputSystem(),		
 			new AIMoverSystem(),

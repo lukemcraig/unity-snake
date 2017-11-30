@@ -12,7 +12,7 @@ EgoConstraint<Transform, TickComponent>
 				int newTick = (int) (Time.time * tick.tickRate);
 
 				if(tick.currentTick<newTick){
-					var e = new TickEvent();
+					var e = new TickEvent(tick.currentTick);
 					EgoEvents<TickEvent>.AddEvent( e );
 					tick.currentTick = newTick;
 				}
