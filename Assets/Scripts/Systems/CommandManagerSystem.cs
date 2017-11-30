@@ -17,7 +17,7 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 		constraint.ForEachGameObject((egoComponent, tick, commandManager) =>
 			{
 				List<ICommand> commandList = new List<ICommand>();
-				if(commandManager.commandDictionary.TryGetValue(tick.currentTick, out commandList)){
+				if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandList)){
 					commandList.Add(e.command);
 					Debug.Log("added command to existing list");
 				}
@@ -27,7 +27,7 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 					commandManager.commandDictionary.Add(e.tickToExecuteOn,commandList);
 					Debug.Log("added command to new list");
 					List<ICommand> commandListDebug = new List<ICommand>();
-					if(commandManager.commandDictionary.TryGetValue(tick.currentTick, out commandListDebug)){
+					if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandListDebug)){
 						Debug.Log("and got it back");
 						foreach(ICommand command in commandListDebug){
 							Debug.Log("and it was " + command.ToString());
