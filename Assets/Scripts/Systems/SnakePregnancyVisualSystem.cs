@@ -21,7 +21,7 @@ EgoConstraint<SnakePartComponent, MeshRenderer>
                 }		
 				else{
 //					Debug.Log("e",egoComponent);
-//					renderer.material=snakePart.normalMaterial;
+					renderer.material=snakePart.normalMaterial;
 				}
 			} );
 	}

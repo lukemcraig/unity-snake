@@ -24,9 +24,9 @@ public class PregnancyCommand : ICommand {
 		} else {
 			//parent.childPart.isPregnant=true;
 			// TODO new event
-			var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart,tickToExecute+2),tickToExecute+2);
+			var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart,tickToExecute+1),tickToExecute+1);
 			EgoEvents<CommandEvent>.AddEvent(commandEvent);
-			Debug.Log("added delivery at " + (tickToExecute+2));
+			Debug.Log("added delivery at " + (tickToExecute+1));
 			Debug.Log ("passed the torch",parent);
 		}
 	}
