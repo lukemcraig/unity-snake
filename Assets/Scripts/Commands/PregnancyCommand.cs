@@ -20,15 +20,14 @@ public class PregnancyCommand : ICommand {
 			child.transform.parent = parent.container;
 			child.container = parent.container;
 			parent.childPart = child;
-			Debug.Log ("gave birth",parent);
 		} else {
-			//parent.childPart.isPregnant=true;
-			// TODO new event
-			var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart,tickToExecute+1),tickToExecute+1);
-			EgoEvents<CommandEvent>.AddEvent(commandEvent);
-			Debug.Log("added delivery at " + (tickToExecute+1));
-			Debug.Log ("passed the torch",parent);
-		}
+            //parent.childPart.isPregnant=true;
+            // TODO new event            
+            //var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart,tickToExecute+2),tickToExecute+2);
+            //EgoEvents<CommandEvent>.AddEvent(commandEvent);
+            var pregEvent = new PregnancyEvent(parent.childPart);
+            EgoEvents<PregnancyEvent>.AddEvent(pregEvent);
+        }
 	}
 
 	public override void Undo(){
