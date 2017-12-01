@@ -5,11 +5,9 @@ using UnityEngine;
 public class PregnancyCommand : ICommand {
 	
 	public SnakePartComponent parent;
-	public int tickToExecute;
 	
-	public PregnancyCommand(SnakePartComponent parent, int tickToExecute){
+	public PregnancyCommand(SnakePartComponent parent){
 		this.parent = parent;
-		this.tickToExecute = tickToExecute;
 	}
 
 	public override void Execute(){

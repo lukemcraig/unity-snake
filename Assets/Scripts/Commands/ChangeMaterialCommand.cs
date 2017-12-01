@@ -6,13 +6,11 @@ public class ChangeMaterialCommand : ICommand {
 	
 	public MeshRenderer renderer;
     public Material newMat;
-    public int tickToExecute;
     private Material originalMat;
 
-    public ChangeMaterialCommand(MeshRenderer renderer, Material newMat, int tickToExecute){
+    public ChangeMaterialCommand(MeshRenderer renderer, Material newMat){
 		this.renderer = renderer;
         this.newMat = newMat;
-        this.tickToExecute = tickToExecute;
 	}
 
 	public override void Execute(){

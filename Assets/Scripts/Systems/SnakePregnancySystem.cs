@@ -25,9 +25,8 @@ EgoConstraint<SnakePartComponent>
         {
             if (e.newParent == snakePart )
             {
-                var commandEvent = new CommandEvent(new PregnancyCommand(snakePart, tick + 2), tick + 2);
+                var commandEvent = new CommandEvent(new PregnancyCommand(snakePart), tick + 2);
                 EgoEvents<CommandEvent>.AddEvent(commandEvent);
-                Debug.Log("added delivery at " + (tick + 2));
             }
         });
     }

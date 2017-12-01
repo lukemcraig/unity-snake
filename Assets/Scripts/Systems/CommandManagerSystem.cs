@@ -19,13 +19,13 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 				List<ICommand> commandList = new List<ICommand>();
 				if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandList)){
 					commandList.Add(e.command);
-					Debug.Log("added command to existing list");
+					//Debug.Log("added command to existing list");
 				}
 				else{
 					commandList = new List<ICommand>();
 					commandList.Add(e.command);
 					commandManager.commandDictionary.Add(e.tickToExecuteOn,commandList);
-					Debug.Log("added command to new list");
+					//Debug.Log("added command to new list");
 					//List<ICommand> commandListDebug = new List<ICommand>();
 					//if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandListDebug)){
 					//	Debug.Log("and got it back");
@@ -47,7 +47,7 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 				//Debug.Log("tick event " + tick.currentTick);
 				List<ICommand> commandList;
 				if(commandManager.commandDictionary.TryGetValue(tick.currentTick, out commandList)){
-					Debug.Log("found command list for tick");
+
 					foreach(ICommand command in commandList){
 						if(!tick.reverse){
 							command.Execute();
