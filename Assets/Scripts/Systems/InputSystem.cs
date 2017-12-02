@@ -5,6 +5,12 @@ using UnityEngine;
 public class InputSystem : EgoSystem<
 EgoConstraint<InputComponent, InputQueueComponent>
 >{
+	public override void Start()
+	{
+        // Add Event Handlers
+        EgoEvents<TickEvent>.AddHandler(Handle);
+    }
+    
 	public override void Update()
 	{
 		constraint.ForEachGameObject( ( egoComponent, input, inputQueueC) =>
@@ -29,9 +35,19 @@ EgoConstraint<InputComponent, InputQueueComponent>
 				}
 			} );
 	}
-
+	
 	void SetMovementDirection (Vector3 newDir, InputQueueComponent iqc)
 	{
 		iqc.inputQueue.Enqueue (newDir);	
 	}
+	
+	void Handle( TickEvent e )
+	{
+		if(e.reverse){
+			constraint.ForEachGameObject( ( egoComponent, input, inputQueueC)=>
+				{
+					inputQueueC.inputQueue.Clear();
+				} );
+		}
+	}	
 }

@@ -18,7 +18,7 @@ EgoConstraint<Transform, MovementComponent>
 				//movement.movementDirection = movement.nextMovement;
 				//transform.position += movement.movementDirection;
 				if(!e.reverse){
-					var commandEvent = new CommandEvent(new MovementCommand(transform,movement), 0);
+					var commandEvent = new CommandEvent(new MovementCommand(transform, movement), 0);
 					EgoEvents<CommandEvent>.AddEvent(commandEvent);
                 }
 			} );
