@@ -22,9 +22,11 @@ public class MyEgoInterface : EgoInterface
 			new CommandRecieveSystem()
 			
         );	
+        
         EgoEvents.AddEnd<TickEvent>();
-        EgoEvents.AddFront<CommandEvent>();		
+        EgoEvents.AddFront<CommandEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
+		
 		
     }
 

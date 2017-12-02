@@ -5,19 +5,14 @@ using UnityEngine;
 public class SnakePregnancySystem : EgoSystem<
 EgoConstraint<SnakePartComponent>
 >{
-    int tick = 0;
+
 	public override void Start()
 	{
         // Add Event Handlers
-        EgoEvents<TickEvent>.AddHandler( Handle );
+       
         EgoEvents<PregnancyEvent>.AddHandler(Handle);
     }
 
-
-    void Handle(TickEvent e)
-    {
-        tick = e.tick;
-    }
 
     void Handle(PregnancyEvent e)
     {
@@ -25,7 +20,7 @@ EgoConstraint<SnakePartComponent>
         {
             if (e.newParent == snakePart )
             {
-                var commandEvent = new CommandEvent(new PregnancyCommand(snakePart), tick + 1);
+                var commandEvent = new CommandEvent(new PregnancyCommand(snakePart), 1);
                 EgoEvents<CommandEvent>.AddEvent(commandEvent);
             }
         });

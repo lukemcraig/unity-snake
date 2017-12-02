@@ -35,9 +35,9 @@ EgoConstraint<SnakePartComponent, MeshRenderer>
         {
             if (e.newParent == snakePart)
             {
-                var commandEvent = new CommandEvent(new ChangeMaterialCommand(renderer, snakePart.pregnantMaterial), tick);
+                var commandEvent = new CommandEvent(new ChangeMaterialCommand(renderer, snakePart.pregnantMaterial), 0);
                 EgoEvents<CommandEvent>.AddEvent(commandEvent);
-                var commandEvent2 = new CommandEvent(new ChangeMaterialCommand(renderer, renderer.material), tick + 1);
+                var commandEvent2 = new CommandEvent(new ChangeMaterialCommand(renderer, renderer.material), 1);
                 EgoEvents<CommandEvent>.AddEvent(commandEvent2);
             }
         });

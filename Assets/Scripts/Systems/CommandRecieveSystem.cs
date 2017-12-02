@@ -18,14 +18,14 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 			{
 				Debug.Log("added command " + e.command.ToString() +" at "+ e.tickToExecuteOn + " on "+tick.currentTick);
 				List<ICommand> commandList = new List<ICommand>();
-				if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandList)){
+				if(commandManager.commandDictionary.TryGetValue(tick.currentTick+e.tickToExecuteOn, out commandList)){
 					commandList.Add(e.command);
 					//Debug.Log("added command to existing list");
 				}
 				else{
 					commandList = new List<ICommand>();
 					commandList.Add(e.command);
-					commandManager.commandDictionary.Add(e.tickToExecuteOn,commandList);
+					commandManager.commandDictionary.Add(tick.currentTick+e.tickToExecuteOn,commandList);
 					//Debug.Log("added command to new list");
 					//List<ICommand> commandListDebug = new List<ICommand>();
 					//if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandListDebug)){
@@ -38,7 +38,7 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 					//	Debug.Log("and didn't get it back");
 					//}
 				}
-				if(e.tickToExecuteOn==tick.currentTick){
+				if(e.tickToExecuteOn==0){
 					e.command.Execute();
 				}
 			});
