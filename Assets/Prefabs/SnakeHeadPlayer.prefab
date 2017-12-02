@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 114719589472660000}
   - component: {fileID: 114434468127730074}
   - component: {fileID: 114404952404153148}
+  - component: {fileID: 114809826539465868}
   m_Layer: 0
   m_Name: SnakeHeadPlayer
   m_TagString: Untagged
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae9ba791de15ab458fd2f41cbba575c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114809826539465868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1007f191c5ed4ec08c72498751ffe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  age: 0
 --- !u!114 &114852939425808036
 MonoBehaviour:
   m_ObjectHideFlags: 1

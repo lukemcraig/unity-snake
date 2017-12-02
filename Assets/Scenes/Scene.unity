@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTick: 1
-  tickRate: 12.35
+  tickRate: 2
   reverse: 0
   debugStep: 0
   pause: 1
