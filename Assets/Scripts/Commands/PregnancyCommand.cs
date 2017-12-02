@@ -13,6 +13,7 @@ public class PregnancyCommand : ICommand {
 	public override void Execute(){
 		if (parent.childPart == null) {
 			SnakePartComponent child = Ego.AddGameObject( Object.Instantiate<GameObject>( parent.snakePrefab ) ).GetComponent<SnakePartComponent>();
+			child.snakePrefab = parent.snakePrefab;
 			child.transform.position = parent.transform.position;
 			child.transform.rotation = parent.transform.rotation;
 			child.transform.parent = parent.container;
