@@ -25,10 +25,7 @@ public class ObstacleCollisionSystem : EgoSystem{
 	void DealWithCollision( EgoComponent obstacle, EgoComponent vulnerable )
     {
 		Ego.DestroyGameObject (vulnerable);
-//		SnakePartComponent snakePart;
-//		if (mouth.TryGetComponents (out snakePart)) {
-//			snakePart.isPregnant = true;
-//		}
+
     }
 
 }

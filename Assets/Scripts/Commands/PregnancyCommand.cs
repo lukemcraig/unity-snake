@@ -11,7 +11,9 @@ public class PregnancyCommand : ICommand {
 	}
 
 	public override void Execute(){
+		parent.isPregnant=false;
 		if (parent.childPart == null) {
+			
 			SnakePartComponent child = Ego.AddGameObject( Object.Instantiate<GameObject>( parent.snakePrefab ) ).GetComponent<SnakePartComponent>();
 			child.snakePrefab = parent.snakePrefab;
 			child.transform.position = parent.transform.position;
@@ -19,11 +21,6 @@ public class PregnancyCommand : ICommand {
 			child.transform.parent = parent.container;
 			child.container = parent.container;
 			parent.childPart = child;
-			
-			var changeMaterialCommand1 = new CommandEvent(new ChangeMaterialCommand(child.GetComponent<MeshRenderer>(), child.newMaterial),0);
-            EgoEvents<CommandEvent>.AddEvent(changeMaterialCommand1);
-			var changeMaterialCommand2 = new CommandEvent(new ChangeMaterialCommand(child.GetComponent<MeshRenderer>(), child.normalMaterial),1);
-            EgoEvents<CommandEvent>.AddEvent(changeMaterialCommand2);
 		} else {
             var pregEvent = new PregnancyEvent(parent.childPart);
             EgoEvents<PregnancyEvent>.AddEvent(pregEvent);

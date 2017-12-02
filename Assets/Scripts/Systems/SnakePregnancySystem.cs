@@ -20,6 +20,7 @@ EgoConstraint<SnakePartComponent>
         {
             if (e.newParent == snakePart )
             {
+            	snakePart.isPregnant = true;
                 var commandEvent = new CommandEvent(new PregnancyCommand(snakePart), 1);
                 EgoEvents<CommandEvent>.AddEvent(commandEvent);
             }

@@ -20,7 +20,6 @@ EgoConstraint<MovementComponent, SnakePartComponent>
 					MovementComponent childMovement;
 					if( childEgoComponent.TryGetComponents(out childMovement) )
 					{
-//						childMovement.positionQueue.Enqueue (transform.position);
 						childMovement.nextMovement = movement.movementDirection;
 					}
 				}

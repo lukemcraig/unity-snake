@@ -16,7 +16,7 @@ public class EatEdibleCommand : ICommand {
 		Ego.DestroyGameObject (edible);
 		SnakePartComponent snakePart;
 		if (mouth.TryGetComponents (out snakePart)) {
-            //snakePart.isPregnant = true;
+            snakePart.isPregnant = true;
             var pregEvent = new PregnancyEvent(snakePart);
             EgoEvents<PregnancyEvent>.AddEvent(pregEvent);
         }
