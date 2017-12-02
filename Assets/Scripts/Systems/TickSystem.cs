@@ -10,25 +10,24 @@ EgoConstraint<Transform, TickComponent>
 		constraint.ForEachGameObject( ( egoComponent, transform, tick) =>
 			{
 				if(!tick.pause){
-					int newTick = (int) (Time.time * tick.tickRate);
-					
-					if(tick.currentTick<newTick){
+					//int newTick = (int) (Time.time * tick.tickRate);
+					tick.partialTick += Time.deltaTime* tick.tickRate;
+					if(tick.partialTick>=1f){
+						tick.currentTick++;
+						tick.partialTick -= (int) tick.partialTick;
+						Debug.Assert(tick.partialTick < 1f );						
 						var e = new TickEvent(tick.currentTick);
 						EgoEvents<TickEvent>.AddEvent( e );
-						tick.currentTick = newTick;
 					}
-				}
+				}       
 				else{
 					if(tick.debugStep==true){
 						tick.debugStep=false;
 						tick.currentTick += 1;
 						var e = new TickEvent(tick.currentTick);
-						EgoEvents<TickEvent>.AddEvent( e );
-						
+						EgoEvents<TickEvent>.AddEvent( e );	
 					}
 				}
 			} );
-	}
-	
-	
+	}	
 }
