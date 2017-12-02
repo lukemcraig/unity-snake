@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class CommandComponent : MonoBehaviour {
+public class InputQueueComponent : MonoBehaviour {
 
 	public Queue<Vector3> inputQueue = new Queue<Vector3> ();
 }

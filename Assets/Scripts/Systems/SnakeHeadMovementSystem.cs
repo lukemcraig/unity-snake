@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakeHeadMovementSystem : EgoSystem<
-EgoConstraint<MovementComponent, CommandComponent>
+EgoConstraint<MovementComponent, InputQueueComponent>
 >{
 	public override void Start()
 	{      
@@ -13,10 +13,10 @@ EgoConstraint<MovementComponent, CommandComponent>
 
 	void Handle( TickEvent e )
 	{
-		constraint.ForEachGameObject( ( egoComponent, movement, command) =>
+		constraint.ForEachGameObject( ( egoComponent, movement, iqc) =>
 			{
-				if (command.inputQueue.Count > 0) {
-					Vector3 newDir = command.inputQueue.Dequeue ();
+				if (iqc.inputQueue.Count > 0) {
+					Vector3 newDir = iqc.inputQueue.Dequeue ();
 					if (movement.nextMovement != -newDir) {
 						movement.nextMovement = newDir;
 					}

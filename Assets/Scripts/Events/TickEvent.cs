@@ -5,9 +5,9 @@ using UnityEngine;
 public class TickEvent : EgoEvent {
 	public readonly int tick;
 	public readonly bool reverse;
-	public TickEvent(int tick )
+	public TickEvent(int tick, bool reverse )
 	{
 		this.tick = tick;
-		this.reverse = false;
+		this.reverse = reverse;
 	}
 }

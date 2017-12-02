@@ -23,11 +23,10 @@ public class MyEgoInterface : EgoInterface
 			new ObstacleCollisionSystem(),
 			new CommandRecieveSystem()
 			
-        );	
-        
-        
-        EgoEvents.AddFront<CommandEvent>();
+        );	    
+       
         EgoEvents.AddEnd<TickEvent>();
+        EgoEvents.AddFront<CommandEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
 		
 		

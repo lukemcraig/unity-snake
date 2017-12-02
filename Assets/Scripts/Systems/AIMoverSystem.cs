@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AIMoverSystem : EgoSystem<
-EgoConstraint<Transform, AIMoverComponent, CommandComponent, MovementComponent, SnakePartComponent>
+EgoConstraint<Transform, AIMoverComponent, InputQueueComponent, MovementComponent>
 > {
     public override void Start()
     {
@@ -13,9 +13,9 @@ EgoConstraint<Transform, AIMoverComponent, CommandComponent, MovementComponent, 
 
     void Handle( TickEvent e )
     {
-        constraint.ForEachGameObject((egoComponent, transform, aimover, command, movement, snakePart) =>
+        constraint.ForEachGameObject((egoComponent, transform, aimover, inputQueue, movement) =>
         {
-            aimover.movementStrategy.Move(transform, command, movement);
+            aimover.movementStrategy.Move(transform, inputQueue, movement);
         });
     }
 

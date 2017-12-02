@@ -9,14 +9,17 @@ EgoConstraint<AgeComponent>
     {
         EgoEvents<TickEvent>.AddHandler( Handle );
     }
-
+    
     void Handle( TickEvent e )
     {
         constraint.ForEachGameObject((egoComponent, age) =>
-        {
-           age.age++;
-        });
+        	{
+        		if (!e.reverse)
+        			age.age++;
+        		else
+        			age.age--;
+        	});
     }
-
+    
 }
 

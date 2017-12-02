@@ -3,37 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputSystem : EgoSystem<
-EgoConstraint<Transform, InputComponent, CommandComponent>
+EgoConstraint<InputComponent, InputQueueComponent>
 >{
 	public override void Update()
 	{
-		constraint.ForEachGameObject( ( egoComponent, transform, input, command) =>
+		constraint.ForEachGameObject( ( egoComponent, input, inputQueueC) =>
 			{
 				if (Input.GetKeyDown (input.forward)) {
-					SetMovementDirection (Vector3.forward, command.inputQueue);
+					SetMovementDirection (Vector3.forward, inputQueueC);
 				}
 				if (Input.GetKeyDown (input.left)) {
-					SetMovementDirection (Vector3.left, command.inputQueue);
+					SetMovementDirection (Vector3.left, inputQueueC);
 				}
 				if (Input.GetKeyDown (input.back)) {
-					SetMovementDirection (Vector3.back, command.inputQueue);
+					SetMovementDirection (Vector3.back, inputQueueC);
 				}
 				if (Input.GetKeyDown (input.right)) {
-					SetMovementDirection (Vector3.right, command.inputQueue);
+					SetMovementDirection (Vector3.right, inputQueueC);
 				}
 				if (Input.GetKeyDown (input.up)) {
-					SetMovementDirection (Vector3.up, command.inputQueue);
+					SetMovementDirection (Vector3.up, inputQueueC);
 				}
 				if (Input.GetKeyDown (input.down)) {
-					SetMovementDirection (Vector3.down, command.inputQueue);
+					SetMovementDirection (Vector3.down, inputQueueC);
 				}
 			} );
 	}
 
-	void SetMovementDirection (Vector3 newDir, Queue<Vector3> inputQueue)
+	void SetMovementDirection (Vector3 newDir, InputQueueComponent iqc)
 	{
-		if (inputQueue != null) {
-			inputQueue.Enqueue (newDir);
-		}
+		iqc.inputQueue.Enqueue (newDir);	
 	}
 }
