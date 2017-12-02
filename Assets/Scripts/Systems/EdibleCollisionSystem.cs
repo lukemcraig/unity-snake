@@ -17,7 +17,7 @@ public class EdibleCollisionSystem : EgoSystem{
         }
         else if( e.egoComponent1.HasComponents<MouthComponent>() && e.egoComponent2.HasComponents<EdibleComponent>() )
         {
-            // The second colliding GameObject is a brick
+            // The second colliding GameObject is an edible
             EatEdible( e.egoComponent2, e.egoComponent1 );
         }
     }

@@ -7,13 +7,14 @@ public class MyEgoInterface : EgoInterface
 	{
 //        Add Systems here:
         EgoSystems.Add(
-			new CommandExecuteSystem(),
+        	new TickSystem(),
+			new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
-			new TickSystem(),
+			
 			new InputSystem(),		
-			new AIMoverSystem(),
-			new SnakeHeadSystem(),
-			new AgeSystem(),
+			//new AIMoverSystem(),
+			new SnakeHeadMovementSystem(),
+			new AgeSystem(),			
             new SnakePregnancySystem(),
             new SnakeMaterialSystem(),
             new SnakePartSystem(),	
@@ -24,8 +25,9 @@ public class MyEgoInterface : EgoInterface
 			
         );	
         
-        EgoEvents.AddEnd<TickEvent>();
+        
         EgoEvents.AddFront<CommandEvent>();
+        EgoEvents.AddEnd<TickEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
 		
 		

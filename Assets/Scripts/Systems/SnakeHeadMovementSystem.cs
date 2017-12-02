@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeHeadSystem : EgoSystem<
+public class SnakeHeadMovementSystem : EgoSystem<
 EgoConstraint<MovementComponent, CommandComponent>
 >{
 	public override void Start()

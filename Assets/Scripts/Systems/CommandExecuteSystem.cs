@@ -3,54 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CommandExecuteSystem: EgoSystem<
-EgoConstraint<TickComponent, CommandManagerComponent>
+EgoConstraint<CommandManagerComponent>
 > {
 	public override void Start()
 	{
 		// Add Event Handlers
 		EgoEvents<TickEvent>.AddHandler( Handle );
-		//EgoEvents<CommandEvent>.AddHandler( Handle );
 	}
-
-/* 	void Handle( CommandEvent e )
-	{
-		constraint.ForEachGameObject((egoComponent, tick, commandManager) =>
-			{
-				Debug.Log("added command " + e.command.ToString());
-				List<ICommand> commandList = new List<ICommand>();
-				if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandList)){
-					commandList.Add(e.command);
-					//Debug.Log("added command to existing list");
-				}
-				else{
-					commandList = new List<ICommand>();
-					commandList.Add(e.command);
-					commandManager.commandDictionary.Add(e.tickToExecuteOn,commandList);
-					//Debug.Log("added command to new list");
-					//List<ICommand> commandListDebug = new List<ICommand>();
-					//if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandListDebug)){
-					//	Debug.Log("and got it back");
-					//	foreach(ICommand command in commandListDebug){
-					//		Debug.Log("and it was " + command.ToString());
-					//	}
-					//}
-					//else{
-					//	Debug.Log("and didn't get it back");
-					//}
-				}
-			});
-	} */
 
 	void Handle( TickEvent e )
 	{
-		constraint.ForEachGameObject((egoComponent, tick, commandManager) =>
-			{
-				Debug.Log("tick event " + tick.currentTick);
+		constraint.ForEachGameObject((egoComponent, commandManager) =>
+			{		
 				List<ICommand> commandList;
-				if(commandManager.commandDictionary.TryGetValue(tick.currentTick, out commandList)){
-
+				if(commandManager.commandDictionary.TryGetValue(e.tick, out commandList)){
 					foreach(ICommand command in commandList){
-						if(!tick.reverse){
+						if(!e.reverse){
 							command.Execute();
 							Debug.Log("executed command"+ command.ToString());
 						}
@@ -60,9 +28,6 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 						}
 					}
 				}
-				//else{
-				//	Debug.Log("no command lists for tick ");
-				//}
 			});
 	}
 }
