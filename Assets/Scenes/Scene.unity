@@ -1131,4 +1131,4 @@ MonoBehaviour:
   reverse: 0
   partialTick: 0
   debugStep: 0
-  pause: 0
+  pause: 1

@@ -23,9 +23,12 @@ EgoConstraint<CommandManagerComponent>
 							Debug.Log("executed command"+ command.ToString());
 						}
 						else{
-							command.Undo();
+							command.Undo();							
 							Debug.Log("undid comamand");
 						}
+					}
+					if(e.reverse){
+						commandList.Clear();
 					}
 				}
 			});

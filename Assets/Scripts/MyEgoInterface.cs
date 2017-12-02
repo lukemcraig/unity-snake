@@ -15,7 +15,7 @@ public class MyEgoInterface : EgoInterface
 			//new AIMoverSystem(),
 			new SnakeHeadMovementSystem(),
 			new AgeSystem(),			
-            new SnakePregnancySystem(),
+            //new SnakePregnancySystem(),
             new SnakeMaterialSystem(),
             new SnakePartSystem(),	
 			new MovementSystem(),

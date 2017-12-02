@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PregnancyCommand : ICommand {
 	
-	public SnakePartComponent parent;
+	private SnakePartComponent parent;
 	
 	public PregnancyCommand(SnakePartComponent parent){
 		this.parent = parent;

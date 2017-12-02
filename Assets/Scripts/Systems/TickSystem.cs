@@ -12,7 +12,12 @@ EgoConstraint<TickComponent>
 				if(!tick.pause){
 					tick.partialTick += Time.deltaTime* tick.tickRate;
 					if(tick.partialTick>=1f){
-						tick.currentTick++;
+						if(tick.reverse && tick.currentTick < 1)
+							tick.reverse = false;
+						if(!tick.reverse)
+							tick.currentTick++;
+						else
+							tick.currentTick--;
 						tick.partialTick -= (int) tick.partialTick;
 						Debug.Assert(tick.partialTick < 1f );	
 						

@@ -14,7 +14,7 @@ public class TickComponent : MonoBehaviour {
 	void OnGUI()
 	{
 		if(pause)
-			if(GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), "Step Forward"))
+			if(GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), !reverse ? "Step Forward" : "Step Backwards"))
 			{
 				debugStep = true;
 			}
