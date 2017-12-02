@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[DisallowMultipleComponent]
 public class EventManager : MonoBehaviour 
 {
-	public delegate void ClickAction();
-	public static event ClickAction OnClicked;
+	public bool clicked = false;
 
 
 	void OnGUI()
 	{
-		if(GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), "Click"))
+		if(GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), "Step Forward"))
 		{
-			if(OnClicked != null)
-				OnClicked();
+			clicked = true;
 		}
 	}
+
+
 }

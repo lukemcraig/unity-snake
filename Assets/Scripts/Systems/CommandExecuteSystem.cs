@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommandManagerSystem: EgoSystem<
+public class CommandExecuteSystem: EgoSystem<
 EgoConstraint<TickComponent, CommandManagerComponent>
 > {
 	public override void Start()
 	{
 		// Add Event Handlers
 		EgoEvents<TickEvent>.AddHandler( Handle );
-		EgoEvents<CommandEvent>.AddHandler( Handle );
+		//EgoEvents<CommandEvent>.AddHandler( Handle );
 	}
 
-	void Handle( CommandEvent e )
+/* 	void Handle( CommandEvent e )
 	{
 		constraint.ForEachGameObject((egoComponent, tick, commandManager) =>
 			{
+				Debug.Log("added command " + e.command.ToString());
 				List<ICommand> commandList = new List<ICommand>();
 				if(commandManager.commandDictionary.TryGetValue(e.tickToExecuteOn, out commandList)){
 					commandList.Add(e.command);
@@ -38,13 +39,13 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 					//}
 				}
 			});
-	}
+	} */
 
 	void Handle( TickEvent e )
 	{
 		constraint.ForEachGameObject((egoComponent, tick, commandManager) =>
 			{
-				//Debug.Log("tick event " + tick.currentTick);
+				Debug.Log("tick event " + tick.currentTick);
 				List<ICommand> commandList;
 				if(commandManager.commandDictionary.TryGetValue(tick.currentTick, out commandList)){
 
