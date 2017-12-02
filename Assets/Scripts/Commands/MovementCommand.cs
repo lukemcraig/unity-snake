@@ -19,5 +19,6 @@ public class MovementCommand : ICommand {
 	public override void Undo(){
 		Debug.Assert(transform != null);
 		transform.position -= movement.movementDirection;
+		movement.movementDirection = movement.nextMovement;
 	}
 }
