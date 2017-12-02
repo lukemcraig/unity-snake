@@ -19,11 +19,12 @@ public class PregnancyCommand : ICommand {
 			child.transform.parent = parent.container;
 			child.container = parent.container;
 			parent.childPart = child;
+			
+			var changeMaterialCommand1 = new CommandEvent(new ChangeMaterialCommand(child.GetComponent<MeshRenderer>(), child.newMaterial),0);
+            EgoEvents<CommandEvent>.AddEvent(changeMaterialCommand1);
+			var changeMaterialCommand2 = new CommandEvent(new ChangeMaterialCommand(child.GetComponent<MeshRenderer>(), child.normalMaterial),1);
+            EgoEvents<CommandEvent>.AddEvent(changeMaterialCommand2);
 		} else {
-            //parent.childPart.isPregnant=true;
-            // TODO new event            
-            //var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart,tickToExecute+2),tickToExecute+2);
-            //EgoEvents<CommandEvent>.AddEvent(commandEvent);
             var pregEvent = new PregnancyEvent(parent.childPart);
             EgoEvents<PregnancyEvent>.AddEvent(pregEvent);
         }

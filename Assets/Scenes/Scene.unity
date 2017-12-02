@@ -383,6 +383,16 @@ Prefab:
       propertyPath: nextMovement.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114122075176810484, guid: 9cde5e577cdd84069a4db7ee9751640b,
+        type: 2}
+      propertyPath: newMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 16c75d4ebb81e42d184310b6f39df435, type: 2}
+    - target: {fileID: 114122075176810484, guid: 9cde5e577cdd84069a4db7ee9751640b,
+        type: 2}
+      propertyPath: normalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 35cd8244b1fa84f13a235e4f3c1e7f07, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cde5e577cdd84069a4db7ee9751640b, type: 2}
   m_IsPrefabParent: 0
@@ -986,4 +996,4 @@ MonoBehaviour:
   tickRate: 12.35
   reverse: 0
   debugStep: 0
-  pause: 0
+  pause: 1

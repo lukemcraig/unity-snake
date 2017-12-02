@@ -11,12 +11,12 @@ public class TickComponent : MonoBehaviour {
 	public bool debugStep = false;
 	public bool pause = true;
 	
-	/* 	void OnGUI()
+		void OnGUI()
 	{
 		if(pause)
 			if(GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), "Step Forward"))
 			{
 				debugStep = true;
 			}
-	} */
+	}
 }

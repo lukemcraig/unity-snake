@@ -24,13 +24,8 @@ public class EdibleCollisionSystem : EgoSystem{
 
     void EatEdible( EgoComponent edible, EgoComponent mouth )
     {
-		Ego.DestroyGameObject (edible);
-		SnakePartComponent snakePart;
-		if (mouth.TryGetComponents (out snakePart)) {
-            //snakePart.isPregnant = true;
-            var pregEvent = new PregnancyEvent(snakePart);
-            EgoEvents<PregnancyEvent>.AddEvent(pregEvent);
-        }
+		var commandEvent = new CommandEvent(new EatEdibleCommand(edible, mouth),0);
+		EgoEvents<CommandEvent>.AddEvent(commandEvent);
     }
 
 }

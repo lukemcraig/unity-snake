@@ -21,7 +21,6 @@ EgoConstraint<MovementComponent, CommandComponent>
 						movement.nextMovement = newDir;
 					}
 				}
-
 			} );
 	}
 

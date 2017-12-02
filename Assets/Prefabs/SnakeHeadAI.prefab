@@ -136,7 +136,9 @@ MonoBehaviour:
   snakePrefab: {fileID: 1033600431772952, guid: ae30fea6fdec844e7943d9883975c2e5,
     type: 2}
   pregnantMaterial: {fileID: 2100000, guid: 662e1c25785334e978b0a8b73e86041f, type: 2}
-  normalMaterial: {fileID: 2100000, guid: b645334bb5e5d4bb58f28d3bababd7d5, type: 2}
+  normalMaterial: {fileID: 2100000, guid: 35cd8244b1fa84f13a235e4f3c1e7f07, type: 2}
+  newMaterial: {fileID: 2100000, guid: 16c75d4ebb81e42d184310b6f39df435, type: 2}
+  container: {fileID: 0}
 --- !u!114 &114153708518712592
 MonoBehaviour:
   m_ObjectHideFlags: 1

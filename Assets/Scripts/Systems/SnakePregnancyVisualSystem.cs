@@ -5,11 +5,10 @@ using UnityEngine;
 public class SnakePregnancyVisualSystem : EgoSystem<
 EgoConstraint<SnakePartComponent, MeshRenderer>
 >{
-    int tick = 0;
     public override void Start()
 	{
         // Add Event Handlers
-        EgoEvents<TickEvent>.AddHandler(Handle);
+       // EgoEvents<TickEvent>.AddHandler(Handle);
         EgoEvents<PregnancyEvent>.AddHandler(Handle);
     }
 
@@ -24,16 +23,11 @@ EgoConstraint<SnakePartComponent, MeshRenderer>
     //		} );
     //}
 
-    void Handle(TickEvent e)
-    {
-        tick = e.tick;
-    }
-
     void Handle(PregnancyEvent e)
     {
         constraint.ForEachGameObject((egoComponent, snakePart, renderer) =>
         {
-            if (e.newParent == snakePart)
+            if (snakePart == e.newParent)
             {
                 var commandEvent = new CommandEvent(new ChangeMaterialCommand(renderer, snakePart.pregnantMaterial), 0);
                 EgoEvents<CommandEvent>.AddEvent(commandEvent);

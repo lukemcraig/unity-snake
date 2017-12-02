@@ -9,5 +9,6 @@ public class SnakePartComponent : MonoBehaviour {
 	public GameObject snakePrefab;
 	public Material pregnantMaterial;
 	public Material normalMaterial;
+	public Material newMaterial;
 	public Transform container;
 }
