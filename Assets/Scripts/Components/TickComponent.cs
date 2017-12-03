@@ -11,7 +11,7 @@ public class TickComponent : MonoBehaviour {
 	public bool debugStep = false;
 	public bool pause = true;
 	
-	void OnGUI()
+/* 	void OnGUI()
 	{
 		if(pause){
 			if(GUI.Button(new Rect((Screen.width / 2) - 75, 5, 50, 30), "Step"))
@@ -23,5 +23,5 @@ public class TickComponent : MonoBehaviour {
 				reverse = !reverse;
 			}
 		}
-	}
+	} */
 }

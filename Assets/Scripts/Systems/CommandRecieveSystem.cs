@@ -15,7 +15,7 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 	{
 		constraint.ForEachGameObject((egoComponent, tick, commandManager) =>
 			{
-				Debug.Log("added command " + e.command.ToString() +" at "+ (tick.currentTick+e.ticksTillExecution) + " on "+tick.currentTick);
+				//Debug.Log("added command " + e.command.ToString() +" at "+ (tick.currentTick+e.ticksTillExecution) + " on "+tick.currentTick);
 				List<ICommand> commandList = new List<ICommand>();
 				if(commandManager.commandDictionary.TryGetValue(tick.currentTick+e.ticksTillExecution, out commandList)){
 					commandList.Add(e.command);					

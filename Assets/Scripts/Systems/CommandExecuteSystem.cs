@@ -20,7 +20,7 @@ EgoConstraint<CommandManagerComponent>
 					if(commandManager.commandDictionary.TryGetValue(e.tick, out commandList)){
 						foreach(ICommand command in commandList){							
 							command.Execute();
-							Debug.Log("executed command"+ command.ToString());;							
+							//Debug.Log("executed command"+ command.ToString());;							
 						}
 					}					
 				}
@@ -28,7 +28,7 @@ EgoConstraint<CommandManagerComponent>
 					if(commandManager.commandDictionary.TryGetValue(e.tick+1, out commandList)){
 						foreach(ICommand command in commandList){		
 							command.Undo();							
-							Debug.Log("undid comamand");							
+							//Debug.Log("undid comamand");							
 						}
 					}					
 					commandList.Clear();					

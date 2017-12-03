@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class InputSystem : EgoSystem<
 EgoConstraint<InputComponent, InputQueueComponent>
@@ -13,8 +14,10 @@ EgoConstraint<InputComponent, InputQueueComponent>
     
 	public override void Update()
 	{
+		
 		constraint.ForEachGameObject( ( egoComponent, input, inputQueueC) =>
 			{
+			
 				if (Input.GetKeyDown (input.forward)) {
 					SetMovementDirection (Vector3.forward, inputQueueC);
 				}
@@ -33,7 +36,9 @@ EgoConstraint<InputComponent, InputQueueComponent>
 				if (Input.GetKeyDown (input.down)) {
 					SetMovementDirection (Vector3.down, inputQueueC);
 				}
+				
 			} );
+		
 	}
 	
 	void SetMovementDirection (Vector3 newDir, InputQueueComponent iqc)

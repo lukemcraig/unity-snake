@@ -9,18 +9,23 @@ EgoConstraint<TickComponent>
 	{
 		constraint.ForEachGameObject( ( egoComponent, tick) =>
 			{
+				//if (tick.currentTick == 10)
+        			//Debug.Break();
+        		
 				if(tick.reverse && tick.currentTick < 1)
 					tick.reverse = false;
 				
 				if(!tick.pause){
 					tick.partialTick += Time.deltaTime* tick.tickRate;
+					
 					if(tick.partialTick>=1f){						
 						if(!tick.reverse)
 							tick.currentTick++;
 						else
 							tick.currentTick--;
-						tick.partialTick -= (int) tick.partialTick;
-						Debug.Assert(tick.partialTick < 1f );	
+						//tick.partialTick -= (int) tick.partialTick;						
+						//Debug.Assert(tick.partialTick < 1f );	
+						tick.partialTick = 0;
 						
 						var e = new TickEvent(tick.currentTick, tick.reverse);
 						EgoEvents<TickEvent>.AddEvent( e );
