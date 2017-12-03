@@ -10,5 +10,6 @@ public class SnakePartComponent : MonoBehaviour {
 	public Material pregnantMaterial;
 	public Material normalMaterial;
 	public Material newMaterial;
+	public Material headMaterial;
 	public Transform container;
 }

@@ -32,7 +32,7 @@ public class PregnancyCommand : ICommand {
 	}
 	
 	public override void Undo(){
-		//parent.isPregnant=true;
+		parent.isPregnant=true;
 		if(createdNew){
 			Ego.DestroyGameObject( child.GetComponent<EgoComponent>() );
 			parent.childPart = null;

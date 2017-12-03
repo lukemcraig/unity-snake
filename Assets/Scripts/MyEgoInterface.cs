@@ -11,10 +11,10 @@ public class MyEgoInterface : EgoInterface
         	
 			new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
-			//new AIMoverSystem(),
+			new AIMoverSystem(),
 			new TimeInputSystem(),
 			new MovementInputSystem(),
-			new TestRightSystem(),
+			//new TestRightSystem(),
 			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
 			new SnakeParentMovementSystem(),
@@ -29,6 +29,7 @@ public class MyEgoInterface : EgoInterface
 		EgoEvents.AddFront<TriggerEnterEvent>();
         EgoEvents.AddFront<TickEvent>();
         EgoEvents.AddFront<CommandEvent>();
+		EgoEvents.AddFront<PregnancyEvent>();
 		
 		EgoEvents.AddEnd<ReverseTimeEvent>();
 	}

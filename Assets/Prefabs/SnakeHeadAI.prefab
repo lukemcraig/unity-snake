@@ -139,6 +139,7 @@ MonoBehaviour:
   pregnantMaterial: {fileID: 2100000, guid: 662e1c25785334e978b0a8b73e86041f, type: 2}
   normalMaterial: {fileID: 2100000, guid: 35cd8244b1fa84f13a235e4f3c1e7f07, type: 2}
   newMaterial: {fileID: 2100000, guid: 16c75d4ebb81e42d184310b6f39df435, type: 2}
+  headMaterial: {fileID: 2100000, guid: b645334bb5e5d4bb58f28d3bababd7d5, type: 2}
   container: {fileID: 0}
 --- !u!114 &114153708518712592
 MonoBehaviour:
@@ -185,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa5d74fcd43a427fb7e47bfcede52a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDirection: {x: 0, y: 0, z: 0}
+  currentMovement: {x: 0, y: 0, z: 0}
   nextMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &114565462626127906
 MonoBehaviour:

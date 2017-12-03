@@ -14,7 +14,10 @@ EgoConstraint<SnakePartComponent,AgeComponent, MeshRenderer>
         			renderer.material = snakePart.pregnantMaterial;        			
         		}
         		else{
-        			if (age.age == 0)
+        			if(egoComponent.HasComponents<InputQueueComponent>()){
+        				renderer.material = snakePart.headMaterial;
+        			}
+        			else if (age.age == 0)
         			{
         				renderer.material = snakePart.newMaterial;        				
         			}
