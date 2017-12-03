@@ -19,7 +19,8 @@ public class PregnancyCommand : ICommand {
 			child.snakePrefab = parent.snakePrefab;
 			child.transform.position = parent.transform.position;
 			child.transform.rotation = parent.transform.rotation;
-			child.transform.parent = parent.container;
+			//child.transform.parent = parent.container;
+			Ego.SetParent( parent.container.GetComponent<EgoComponent>(), child.GetComponent<EgoComponent>() );
 			child.container = parent.container;
 			parent.childPart = child;
 			createdNew = true;

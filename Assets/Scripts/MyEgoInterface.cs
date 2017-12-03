@@ -12,22 +12,23 @@ public class MyEgoInterface : EgoInterface
 			new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
 			//new AIMoverSystem(),
-			new InputSystem(),					
+			new InputSystem(),
+			new TestRightSystem(),
 			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
 			new SnakeParentMovementSystem(),
-			new AgeSystem(),			
+			//new AgeSystem(),			
             new SnakePregnancySystem(),
-            new SnakeMaterialSystem(),         
+            //new SnakeMaterialSystem(),         
 			new EdibleCollisionSystem(),
 			//new ObstacleCollisionSystem(),
-			new CommandRecieveSystem(),
-			new FutureErasalSystem()
+			new CommandRecieveSystem()
+			//new FutureErasalSystem()
 			);	    
-		
-        EgoEvents.AddEnd<TickEvent>();
-        EgoEvents.AddFront<CommandEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
+        EgoEvents.AddFront<TickEvent>();
+        EgoEvents.AddFront<CommandEvent>();
+		
 		
 		
     }
