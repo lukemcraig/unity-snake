@@ -3,93 +3,93 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu (menuName = "Strategies/Movement/Random")]
 public class MSRandom : MovementStrategy {
-    public override void Move(Transform transform,  CommandComponent command, MovementComponent movement){
-        DoRandomStuff(transform, command, movement);
+    public override void Move(Transform transform,  InputQueueComponent iqc, MovementComponent movement){
+        DoRandomStuff(transform, iqc, movement);
     }
 
-    private void DoRandomStuff(Transform transform,  CommandComponent command, MovementComponent movement) {
+    private void DoRandomStuff(Transform transform,  InputQueueComponent iqc, MovementComponent movement) {
 
         if (transform.position.y < 0) {
-            if (movement.movementDirection != Vector3.down) {
-                SetMovementDirection(Vector3.up, command.inputQueue);
+            if (movement.currentMovement != Vector3.down) {
+                SetMovementDirection(Vector3.up, iqc.inputQueue);
                 return;
             } else {
-               if (TryToSetMovementDirection(Vector3.left, command.inputQueue, transform))
+               if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform))
                 return;
             }
         }
         else if (transform.position.y > 0){
-            if (TryToSetMovementDirection(Vector3.down, command.inputQueue, transform))
+            if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform))
             return;
         }
 
 
         switch (Random.Range(0, 4)) {
             case 0:
-                if (TryToSetMovementDirection(Vector3.forward, command.inputQueue, transform)) {
+                if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.left, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.back, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.right, command.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.down, command.inputQueue, transform)) {
+                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+
+                }
+                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
 
                 }
                 break;
             case 1:
-                if (TryToSetMovementDirection(Vector3.right, command.inputQueue, transform)) {
+                if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.back, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.left, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.forward, command.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.down, command.inputQueue, transform)) {
+                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+
+                }
+                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
 
                 }
                 break;
             case 2:
-                if (TryToSetMovementDirection(Vector3.back, command.inputQueue, transform)) {
+                if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.right, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.forward, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.left, command.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.down, command.inputQueue, transform)) {
+                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+
+                }
+                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
 
                 }
                 break;
             case 3:
-                if (TryToSetMovementDirection(Vector3.left, command.inputQueue, transform)) {
+                if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.right, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.forward, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
 
-                } else if (TryToSetMovementDirection(Vector3.back, command.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, command.inputQueue, transform)) {
+                } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.down, command.inputQueue, transform)) {
+                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+
+                }
+                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
 
                 }
                 break;

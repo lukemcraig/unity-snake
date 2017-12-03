@@ -4,6 +4,6 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class MovementComponent : MonoBehaviour {
 	
-	public Queue<Vector3> positionQueue = new Queue<Vector3>();
-	public Vector3 movementDirection = Vector3.forward;
+	public Vector3 currentMovement;
+	public Vector3 nextMovement;
 }

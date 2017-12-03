@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 114718299695938086}
   - component: {fileID: 114854138828961878}
   - component: {fileID: 114153708518712592}
+  - component: {fileID: 114893582786563170}
   m_Layer: 0
   m_Name: SnakeHeadAI
   m_TagString: Untagged
@@ -135,6 +136,10 @@ MonoBehaviour:
   childPart: {fileID: 0}
   snakePrefab: {fileID: 1033600431772952, guid: ae30fea6fdec844e7943d9883975c2e5,
     type: 2}
+  pregnantMaterial: {fileID: 2100000, guid: 662e1c25785334e978b0a8b73e86041f, type: 2}
+  normalMaterial: {fileID: 2100000, guid: 35cd8244b1fa84f13a235e4f3c1e7f07, type: 2}
+  newMaterial: {fileID: 2100000, guid: 16c75d4ebb81e42d184310b6f39df435, type: 2}
+  container: {fileID: 0}
 --- !u!114 &114153708518712592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0, z: 0}
+  nextMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &114565462626127906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,3 +231,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c77cc9e4c4424f7f9ae7111bb496576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114893582786563170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1007f191c5ed4ec08c72498751ffe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  age: 0

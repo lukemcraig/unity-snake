@@ -5,22 +5,34 @@ public class MyEgoInterface : EgoInterface
 {
 	static MyEgoInterface()
 	{
-//        Add Systems here:
+		//        Add Systems here:
         EgoSystems.Add(
+        	new TickSystem(),
+        	
+			new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
-			new TickSystem(),
-			new InputSystem(),
+			//new AIMoverSystem(),
+			new TimeInputSystem(),
+			new MovementInputSystem(),
+			new TestRightSystem(),
+			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
-			new AIMoverSystem(),
-			new SnakeHeadSystem(),
-			new SnakePartSystem(),	
+			new SnakeParentMovementSystem(),
+			new AgeSystem(),			
+            new SnakePregnancySystem(),
+            new SnakeMaterialSystem(),         
 			new EdibleCollisionSystem(),
-			new ObstacleCollisionSystem()
-        );	
-		EgoEvents.AddFront<TickEvent>();
+			//new ObstacleCollisionSystem(),
+			new CommandRecieveSystem(),
+			new FutureErasalSystem()
+			);	    
 		EgoEvents.AddFront<TriggerEnterEvent>();
-    }
-
+        EgoEvents.AddFront<TickEvent>();
+        EgoEvents.AddFront<CommandEvent>();
+		
+		EgoEvents.AddEnd<ReverseTimeEvent>();
+	}
+    
     void Start()
     {
     	EgoSystems.Start();
