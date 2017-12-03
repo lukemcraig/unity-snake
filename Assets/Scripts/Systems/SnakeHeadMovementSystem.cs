@@ -23,5 +23,4 @@ EgoConstraint<MovementComponent, InputQueueComponent>
 				}
 			} );
 	}
-
 }

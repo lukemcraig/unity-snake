@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakePartSystem : EgoSystem<
+public class SnakePartMovementSystem : EgoSystem<
 EgoConstraint<MovementComponent, SnakePartComponent>
 >{
 	public override void Start()
@@ -17,10 +17,10 @@ EgoConstraint<MovementComponent, SnakePartComponent>
 			{
 				if (snakePart.childPart != null) {	
 					var childEgoComponent = snakePart.childPart.gameObject.GetComponent<EgoComponent>();
-					MovementComponent childMovement;
-					if( childEgoComponent.TryGetComponents(out childMovement) )
+					MovementComponent childMovement;					
+					if( childEgoComponent.TryGetComponents(out childMovement))
 					{
-						childMovement.nextMovement = movement.movementDirection;
+						childMovement.nextMovement = movement.currentMovement;
 					}
 				}
 			} );

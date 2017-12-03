@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class MovementCommand : ICommand {
 	private Transform transform;
-	private MovementComponent movement;
+	private Vector3 movement;
 	
-	public MovementCommand(Transform transform, MovementComponent movement){
-		this.movement = movement;
+	public MovementCommand(Transform transform, Vector3 movement){
 		this.transform = transform;
+		this.movement = movement;
 	}
 
-	public override void Execute(){
-		movement.movementDirection = movement.nextMovement;
-		transform.position += movement.movementDirection;
+	public override void Execute(){		
+		transform.position += movement;
 	}
 
 	public override void Undo(){
 		Debug.Assert(transform != null);
-		transform.position -= movement.movementDirection;
-		movement.movementDirection = movement.nextMovement;
+		transform.position -= movement;
 	}
 }

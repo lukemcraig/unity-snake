@@ -10,7 +10,7 @@ public class MSRandom : MovementStrategy {
     private void DoRandomStuff(Transform transform,  InputQueueComponent iqc, MovementComponent movement) {
 
         if (transform.position.y < 0) {
-            if (movement.movementDirection != Vector3.down) {
+            if (movement.currentMovement != Vector3.down) {
                 SetMovementDirection(Vector3.up, iqc.inputQueue);
                 return;
             } else {
