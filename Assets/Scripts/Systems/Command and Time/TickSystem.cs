@@ -5,12 +5,18 @@ using UnityEngine;
 public class TickSystem : EgoSystem<
 EgoConstraint<TickComponent>
 >{
+	public override void Start()
+	{
+		// Add Event Handlers
+		EgoEvents<ReverseTimeEvent>.AddHandler( Handle );
+	}
+	
 	public override void Update()
 	{
 		constraint.ForEachGameObject( ( egoComponent, tick) =>
 			{
 				//if (tick.currentTick == 10)
-        			//Debug.Break();
+				//Debug.Break();
         		
 				if(tick.reverse && tick.currentTick < 1)
 					tick.reverse = false;
@@ -43,5 +49,13 @@ EgoConstraint<TickComponent>
 					}
 				}
 			} );
-	}	
+	}
+	void Handle( ReverseTimeEvent e )
+	{
+		constraint.ForEachGameObject( ( egoComponent, tick) =>
+			{
+				tick.reverse = e.reverse;
+			} );
+	}
+	
 }

@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23191207283645716}
   - component: {fileID: 65697033362751226}
   - component: {fileID: 114122075176810484}
+  - component: {fileID: 114022831348850508}
   - component: {fileID: 114565462626127906}
-  - component: {fileID: 114627823946338086}
   - component: {fileID: 114383748892741250}
   - component: {fileID: 114512595757459690}
   - component: {fileID: 114852939425808036}
@@ -121,6 +121,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114022831348850508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065938242863216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db36151dadf345e389b8dc966939d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reverse: 32
 --- !u!114 &114122075176810484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa5d74fcd43a427fb7e47bfcede52a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDirection: {x: 0, y: 0, z: 0}
+  currentMovement: {x: 0, y: 0, z: 0}
   nextMovement: {x: 0, y: 0, z: 1}
 --- !u!114 &114404952404153148
 MonoBehaviour:
@@ -197,23 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779422db26e2540ba927be788a9683eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114627823946338086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065938242863216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd24942bde3d41319e9e199ee4c2244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forward: 119
-  left: 97
-  back: 115
-  right: 100
-  up: 101
-  down: 113
 --- !u!114 &114719589472660000
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -21,8 +21,7 @@ EgoConstraint<SnakePartComponent,AgeComponent, MeshRenderer>
         			else if (age.age > 0){
         				renderer.material = snakePart.normalMaterial;        				
         			}
-        		}
-        		
+        		}        		
         	});
     }
     

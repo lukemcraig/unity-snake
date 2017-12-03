@@ -21,27 +21,27 @@ EgoConstraint<InputQueueComponent>
 	
 	void Handle( TickEvent e )
 	{
-		if(!e.reverse)
-		constraint.ForEachGameObject( ( egoComponent, inputQueueC)=>
-			{
-				switch (e.tick%80){
-				case 1:
-					//Debug.Break();
-					SetMovementDirection (Vector3.forward, inputQueueC);
-					break;
-				case 20:					
-					SetMovementDirection (Vector3.left, inputQueueC);
-					break;
-				case 37:					
-					SetMovementDirection (Vector3.back, inputQueueC);
-					break;
-				case 59:					
-					SetMovementDirection (Vector3.right, inputQueueC);
-					break;
+		if(!e.reverse){
+			constraint.ForEachGameObject( ( egoComponent, inputQueueC)=>
+				{
+					switch (e.tick%80){
+					case 1:
+						//Debug.Break();
+						SetMovementDirection (Vector3.forward, inputQueueC);
+						break;
+					case 20:					
+						SetMovementDirection (Vector3.left, inputQueueC);
+						break;
+					case 37:					
+						SetMovementDirection (Vector3.back, inputQueueC);
+						break;
+					case 59:					
+						SetMovementDirection (Vector3.right, inputQueueC);
+						break;
+						
+					}
 					
-				}
-				
-			} );
-		
+				} );
+		}
 	}	
 }

@@ -12,7 +12,8 @@ public class MyEgoInterface : EgoInterface
 			new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
 			//new AIMoverSystem(),
-			new InputSystem(),
+			new TimeInputSystem(),
+			new MovementInputSystem(),
 			new TestRightSystem(),
 			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
@@ -29,9 +30,8 @@ public class MyEgoInterface : EgoInterface
         EgoEvents.AddFront<TickEvent>();
         EgoEvents.AddFront<CommandEvent>();
 		
-		
-		
-    }
+		EgoEvents.AddEnd<ReverseTimeEvent>();
+	}
     
     void Start()
     {

@@ -15,7 +15,7 @@ EgoConstraint<Transform, MovementComponent>
 	{
 		constraint.ForEachGameObject( ( egoComponent, transform, movement) =>
 			{				
-				movement.currentMovement = movement.nextMovement;				
+				movement.currentMovement = movement.nextMovement;		
 				if(!e.reverse){
 					var commandEvent = new CommandEvent(new MovementCommand(transform, movement.currentMovement), 0);
 					EgoEvents<CommandEvent>.AddEvent(commandEvent);

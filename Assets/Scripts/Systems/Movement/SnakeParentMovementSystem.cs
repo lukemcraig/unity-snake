@@ -10,12 +10,12 @@ EgoConstraint<MovementComponent, SnakePartComponent>
 		// Add Event Handlers
 		EgoEvents<TickEvent>.AddHandler( Handle );
 	}
-
+	
 	void Handle( TickEvent e )
 	{
 		constraint.ForEachGameObject( ( egoComponent, movement, snakePart ) =>
 			{
-				if (snakePart.childPart != null) {	
+				if (snakePart.childPart != null && !e.reverse) {	
 					var childEgoComponent = snakePart.childPart.gameObject.GetComponent<EgoComponent>();
 					MovementComponent childMovement;					
 					if( childEgoComponent.TryGetComponents(out childMovement))

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-public class InputSystem : EgoSystem<
-EgoConstraint<InputComponent, InputQueueComponent>
+public class MovementInputSystem : EgoSystem<
+EgoConstraint<MovementInputComponent, InputQueueComponent>
 >{
 	public override void Start()
 	{

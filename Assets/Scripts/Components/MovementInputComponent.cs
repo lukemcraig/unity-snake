@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class InputComponent : MonoBehaviour {
+public class MovementInputComponent : MonoBehaviour {
 	public KeyCode forward = KeyCode.W;
 	public KeyCode left = KeyCode.A;
 	public KeyCode back = KeyCode.S;
