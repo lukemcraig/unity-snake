@@ -15,12 +15,12 @@ public class MyEgoInterface : EgoInterface
 			new InputSystem(),					
 			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
-			//new SnakeParentMovementSystem(),
+			new SnakeParentMovementSystem(),
 			new AgeSystem(),			
-            //new SnakePregnancySystem(),
+            new SnakePregnancySystem(),
             new SnakeMaterialSystem(),         
 			new EdibleCollisionSystem(),
-			new ObstacleCollisionSystem(),
+			//new ObstacleCollisionSystem(),
 			new CommandRecieveSystem(),
 			new FutureErasalSystem()
 			);	    
