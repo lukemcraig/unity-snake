@@ -13,12 +13,12 @@ EgoConstraint<TimeInputComponent, InputQueueComponent>
 			{
 				
 				if (Input.GetKeyDown (input.reverse)) {
-					var reverseEvent = new ReverseTimeEvent(true);
-					EgoEvents<ReverseTimeEvent>.AddEvent(reverseEvent);
+					var commandEvent = new CommandEvent(new ReverseTimeCommand(true),0);
+					EgoEvents<CommandEvent>.AddEvent(commandEvent);
 				}		
 				if (Input.GetKeyUp (input.reverse)) {
-					var reverseEvent = new ReverseTimeEvent(false);
-					EgoEvents<ReverseTimeEvent>.AddEvent(reverseEvent);
+					var commandEvent = new CommandEvent(new ReverseTimeCommand(false),0);
+					EgoEvents<CommandEvent>.AddEvent(commandEvent);
 				}	
 				
 			} );		

@@ -56,6 +56,7 @@ EgoConstraint<TickComponent>
 			{
 				tick.reverse = e.reverse;
 			} );
+		//Debug.Break();
 	}
 	
 }
