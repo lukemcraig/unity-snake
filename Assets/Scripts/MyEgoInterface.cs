@@ -17,13 +17,13 @@ public class MyEgoInterface : EgoInterface
 			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
 			new SnakeParentMovementSystem(),
-			//new AgeSystem(),			
+			new AgeSystem(),			
             new SnakePregnancySystem(),
-            //new SnakeMaterialSystem(),         
+            new SnakeMaterialSystem(),         
 			new EdibleCollisionSystem(),
 			//new ObstacleCollisionSystem(),
-			new CommandRecieveSystem()
-			//new FutureErasalSystem()
+			new CommandRecieveSystem(),
+			new FutureErasalSystem()
 			);	    
 		EgoEvents.AddFront<TriggerEnterEvent>();
         EgoEvents.AddFront<TickEvent>();

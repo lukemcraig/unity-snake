@@ -17,7 +17,7 @@ EgoConstraint<CommandManagerComponent>
 				if(e.reverse){
 					int count = commandManager.commandDictionary.Count;
 					for(int i = count; i > e.tick;i--){
-						Debug.Log("removing " + i);
+						//Debug.Log("removing " + i);
 						List<ICommand> commandList;
 						if(commandManager.commandDictionary.TryGetValue(i, out commandList)){
 							commandList.Clear();
