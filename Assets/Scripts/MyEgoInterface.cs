@@ -28,8 +28,9 @@ public class MyEgoInterface : EgoInterface
 			);	    
 		EgoEvents.AddFront<TriggerEnterEvent>();
         EgoEvents.AddFront<TickEvent>();
+        EgoEvents.AddFront<PregnancyEvent>();
         EgoEvents.AddFront<CommandEvent>();
-		EgoEvents.AddFront<PregnancyEvent>();
+		
 		
 		EgoEvents.AddEnd<ReverseTimeEvent>();
 	}

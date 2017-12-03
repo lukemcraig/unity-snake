@@ -26,6 +26,9 @@ EgoConstraint<SnakePartComponent>
         				EgoEvents<CommandEvent>.AddEvent(commandEvent);
         			}
         			else {
+        				if(snakePart.parentPart != null){
+        				snakePart.parentPart.isPregnant = true;
+        				}
         				snakePart.isPregnant = false;
         			}
         		}

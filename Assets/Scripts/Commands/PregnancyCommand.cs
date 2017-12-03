@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PregnancyCommand : ICommand {
 	
+	//private SnakePartComponent grandparent;
 	private SnakePartComponent parent;
 	private SnakePartComponent child;
 	private bool createdNew;
@@ -23,6 +24,7 @@ public class PregnancyCommand : ICommand {
 			//Ego.SetParent( parent.container.GetComponent<EgoComponent>(), child.GetComponent<EgoComponent>() );
 			child.container = parent.container;
 			parent.childPart = child;
+			child.parentPart = parent;
 			createdNew = true;
 		} else {
             var pregEvent = new PregnancyEvent(parent.childPart);
