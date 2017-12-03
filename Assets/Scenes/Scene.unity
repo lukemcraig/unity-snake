@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ce710128d8c46a5b6c2a32a2c8a6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTick: 1
+  currentTick: 0
   tickRate: 10
   reverse: 0
   partialTick: 0

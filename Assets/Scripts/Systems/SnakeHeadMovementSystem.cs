@@ -10,12 +10,12 @@ EgoConstraint<MovementComponent, InputQueueComponent>
 		// Add Event Handlers
 		EgoEvents<TickEvent>.AddHandler( Handle );
 	}
-
+	
 	void Handle( TickEvent e )
 	{
 		constraint.ForEachGameObject( ( egoComponent, movement, iqc) =>
 			{
-				if (iqc.inputQueue.Count > 0) {
+				if (!e.reverse && iqc.inputQueue.Count > 0) {
 					Vector3 newDir = iqc.inputQueue.Dequeue ();
 					if (movement.nextMovement != -newDir) {
 						movement.nextMovement = newDir;

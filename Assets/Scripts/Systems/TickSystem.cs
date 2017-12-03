@@ -9,11 +9,12 @@ EgoConstraint<TickComponent>
 	{
 		constraint.ForEachGameObject( ( egoComponent, tick) =>
 			{
+				if(tick.reverse && tick.currentTick < 1)
+					tick.reverse = false;
+				
 				if(!tick.pause){
 					tick.partialTick += Time.deltaTime* tick.tickRate;
-					if(tick.partialTick>=1f){
-						if(tick.reverse && tick.currentTick < 1)
-							tick.reverse = false;
+					if(tick.partialTick>=1f){						
 						if(!tick.reverse)
 							tick.currentTick++;
 						else

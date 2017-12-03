@@ -8,21 +8,21 @@ public class MyEgoInterface : EgoInterface
 		//        Add Systems here:
         EgoSystems.Add(
         	new TickSystem(),
+        	
 			new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
-			
-			new InputSystem(),		
 			//new AIMoverSystem(),
+			new InputSystem(),					
 			new SnakeHeadMovementSystem(),
 			new MovementSystem(),
-			new SnakePartMovementSystem(),
+			//new SnakeParentMovementSystem(),
 			new AgeSystem(),			
-            new SnakePregnancySystem(),
+            //new SnakePregnancySystem(),
             new SnakeMaterialSystem(),         
 			new EdibleCollisionSystem(),
 			new ObstacleCollisionSystem(),
-			new CommandRecieveSystem()
-			
+			new CommandRecieveSystem(),
+			new FutureErasalSystem()
 			);	    
 		
         EgoEvents.AddEnd<TickEvent>();

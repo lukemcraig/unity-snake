@@ -16,8 +16,7 @@ EgoConstraint<SnakePartComponent,AgeComponent, MeshRenderer>
         		else{
         			if (age.age == 0)
         			{
-        				renderer.material = snakePart.newMaterial;
-        				
+        				renderer.material = snakePart.newMaterial;        				
         			}
         			else if (age.age > 0){
         				renderer.material = snakePart.normalMaterial;        				

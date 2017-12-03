@@ -10,26 +10,28 @@ EgoConstraint<CommandManagerComponent>
 		// Add Event Handlers
 		EgoEvents<TickEvent>.AddHandler( Handle );
 	}
-
+	
 	void Handle( TickEvent e )
 	{
 		constraint.ForEachGameObject((egoComponent, commandManager) =>
 			{		
 				List<ICommand> commandList;
-				if(commandManager.commandDictionary.TryGetValue(e.tick, out commandList)){
-					foreach(ICommand command in commandList){
-						if(!e.reverse){
+				if(!e.reverse){
+					if(commandManager.commandDictionary.TryGetValue(e.tick, out commandList)){
+						foreach(ICommand command in commandList){							
 							command.Execute();
-							Debug.Log("executed command"+ command.ToString());
+							Debug.Log("executed command"+ command.ToString());;							
 						}
-						else{
+					}					
+				}
+				else{
+					if(commandManager.commandDictionary.TryGetValue(e.tick+1, out commandList)){
+						foreach(ICommand command in commandList){		
 							command.Undo();							
-							Debug.Log("undid comamand");
+							Debug.Log("undid comamand");							
 						}
-					}
-					if(e.reverse){
-						commandList.Clear();
-					}
+					}					
+					commandList.Clear();					
 				}
 			});
 	}
