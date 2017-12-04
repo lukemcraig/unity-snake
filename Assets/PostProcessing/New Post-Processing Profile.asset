@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Settings:
       intensity: 1.27
       radius: 1.62
-      sampleCount: 6
+      sampleCount: 16
       downsampling: 0
       forceForwardCompatibility: 0
       ambientOnly: 0
@@ -71,17 +71,17 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 8.81
-      aperture: 5.6
-      focalLength: 50
+      focusDistance: 4
+      aperture: 32
+      focalLength: 145
       useCameraFov: 0
-      kernelSize: 1
+      kernelSize: 3
   motionBlur:
     m_Enabled: 0
     m_Settings:
-      shutterAngle: 36
-      sampleCount: 10
-      frameBlending: 0.42
+      shutterAngle: 360
+      sampleCount: 32
+      frameBlending: 0.13
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
@@ -278,8 +278,8 @@ MonoBehaviour:
   userLut:
     m_Enabled: 0
     m_Settings:
-      lut: {fileID: 2800000, guid: 4a8f054acfbd08043a931cd22760758d, type: 3}
-      contribution: 0.52
+      lut: {fileID: 2800000, guid: 69e847bbff1cf5449a4ee0bbd045dbc9, type: 3}
+      contribution: 0.12
   chromaticAberration:
     m_Enabled: 0
     m_Settings:
@@ -298,9 +298,9 @@ MonoBehaviour:
       mode: 0
       color: {r: 0.5661765, g: 0.38656187, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.22
-      smoothness: 1
-      roundness: 0.78
+      intensity: 0.23
+      smoothness: 0.34
+      roundness: 1
       mask: {fileID: 0}
       opacity: 1
       rounded: 1

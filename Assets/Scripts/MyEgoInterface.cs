@@ -7,9 +7,10 @@ public class MyEgoInterface : EgoInterface
 	{
 		//        Add Systems here:
         EgoSystems.Add(
-        	new TickSystem(),
+        	new CameraProjectionSystem(),
         	
-			new CommandExecuteSystem(),			
+        	new TickSystem(),
+        	new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
 			new AIMoverSystem(),
 			new TimeInputSystem(),
