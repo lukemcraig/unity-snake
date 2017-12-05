@@ -9,7 +9,8 @@ public class MyEgoInterface : EgoInterface
         EgoSystems.Add(
         	new CameraProjectionSystem(),
 			new AutoCamSystem(),
-        	new TickSystem(),
+        	//new TickSystem(),
+        	new TurnBasedTickSystem(),
         	new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
 			new AIMoverSystem(),

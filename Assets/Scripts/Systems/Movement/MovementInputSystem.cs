@@ -17,7 +17,7 @@ EgoConstraint<MovementInputComponent, InputQueueComponent>
 		
 		constraint.ForEachGameObject( ( egoComponent, input, inputQueueC) =>
 			{
-			
+				
 				if (Input.GetKeyDown (input.forward)) {
 					SetMovementDirection (Vector3.forward, inputQueueC);
 				}
@@ -43,7 +43,11 @@ EgoConstraint<MovementInputComponent, InputQueueComponent>
 	
 	void SetMovementDirection (Vector3 newDir, InputQueueComponent iqc)
 	{
-		iqc.inputQueue.Enqueue (newDir);	
+		if(iqc.lastInput != newDir && iqc.lastInput != -newDir){
+			iqc.inputQueue.Enqueue (newDir);	
+			var e = new IncrementTickEvent();
+			EgoEvents<IncrementTickEvent>.AddEvent( e );	
+		}
 	}
 	
 	void Handle( TickEvent e )
