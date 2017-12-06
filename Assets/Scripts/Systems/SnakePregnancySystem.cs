@@ -22,7 +22,7 @@ EgoConstraint<Transform, SnakePartComponent>
                 {
                     if (!snakePart.isPregnant)
                     {
-                        var commandEvent = new CommandEvent(new PregnancyCommand(snakePart, transform.position), 1);
+                        var commandEvent = new CommandEvent(new PregnancyCommand(snakePart, transform.position, true), 0);
                         EgoEvents<CommandEvent>.AddEvent(commandEvent);
                     }
                 }
