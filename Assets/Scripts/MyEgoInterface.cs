@@ -26,8 +26,9 @@ public class MyEgoInterface : EgoInterface
 
 			new SnakeHeadMovementSystem(),
 			new SnakeParentMovementSystem(),
+            new MovementSystem(),
 
-			new EdibleCollisionSystem(),
+            new EdibleCollisionSystem(),
 			new ObstacleCollisionSystem(),
 
 			new CommandRecieveSystem(),
