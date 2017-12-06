@@ -32,14 +32,15 @@ public class MyEgoInterface : EgoInterface
 
 			new CommandRecieveSystem(),
 			new FutureErasalSystem()
-			);	    
+			);	   
+		EgoEvents.AddFront<ReverseTimeEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
         EgoEvents.AddFront<TickEvent>();
         EgoEvents.AddFront<PregnancyEvent>();
         EgoEvents.AddFront<CommandEvent>();
 		
 		
-		EgoEvents.AddEnd<ReverseTimeEvent>();
+
 	}
     
     void Start()

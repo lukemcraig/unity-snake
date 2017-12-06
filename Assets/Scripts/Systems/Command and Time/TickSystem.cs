@@ -52,6 +52,7 @@ EgoConstraint<TickComponent>
 	{
 		constraint.ForEachGameObject( ( egoComponent, tick) =>
 			{
+				Debug.Log("reverse" + e.reverse);
 				tick.reverse = e.reverse;
 			} );
 	}
