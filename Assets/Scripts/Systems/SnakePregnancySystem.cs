@@ -3,48 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakePregnancySystem : EgoSystem<
-EgoConstraint<SnakePartComponent>
+EgoConstraint<Transform, SnakePartComponent>
 >{
 	
 	public override void Start()
 	{
-        // Add Event Handlers
-        
+        // Add Event Handlers        
         EgoEvents<PregnancyEvent>.AddHandler(Handle);
-        EgoEvents<TickEvent>.AddHandler(Handle);
     }
-    
-    void Handle(TickEvent e)
-    {
-        constraint.ForEachGameObject((egoComponent, snakePart) =>
-        	{
-        		if (snakePart.isPregnant == true)
-        		{
-        			if(!e.reverse){
-        				//snakePart.isPregnant = false;
-        				var commandEvent = new CommandEvent(new PregnancyCommand(snakePart), 0);
-        				EgoEvents<CommandEvent>.AddEvent(commandEvent);
-        			}
-        			else {
-        				if(snakePart.parentPart != null){
-        				snakePart.parentPart.isPregnant = true;
-        				}
-        				snakePart.isPregnant = false;
-        			}
-        		}
-        		
-        	});
-    }
+   
     
     void Handle(PregnancyEvent e)
     {
-        constraint.ForEachGameObject((egoComponent, snakePart) =>
+        constraint.ForEachGameObject((egoComponent,transform, snakePart) =>
         	{
         		if (e.newParent == snakePart )
         		{
-        			snakePart.isPregnant = true;
-        			
-        		}
+                    var commandEvent = new CommandEvent(new PregnancyCommand(snakePart, transform.position), 1);
+                    EgoEvents<CommandEvent>.AddEvent(commandEvent);
+                }
         	});
     }
     

@@ -36,13 +36,10 @@ public class MyEgoInterface : EgoInterface
 			);	   
 		EgoEvents.AddFront<ReverseTimeEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
-        EgoEvents.AddFront<TickEvent>();
-        EgoEvents.AddFront<PregnancyEvent>();
+        EgoEvents.AddFront<TickEvent>();        
         EgoEvents.AddFront<CommandEvent>();
-		
-		
-
-	}
+        EgoEvents.AddFront<PregnancyEvent>();
+    }
     
     void Start()
     {
