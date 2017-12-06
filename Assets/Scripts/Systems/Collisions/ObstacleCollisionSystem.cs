@@ -24,6 +24,11 @@ public class ObstacleCollisionSystem : EgoSystem{
 
 	void DealWithCollision( EgoComponent obstacle, EgoComponent vulnerable )
     {
+		SnakePartComponent spc;
+		if (vulnerable.TryGetComponents<SnakePartComponent> (out spc)) {
+			spc.childPart.GetComponent<MovementComponent> ().nextMovement = Vector3.zero;
+			spc.childPart.GetComponent<MovementComponent> ().currentMovement = Vector3.zero;
+		}
 		Ego.DestroyGameObject (vulnerable);
     }
 

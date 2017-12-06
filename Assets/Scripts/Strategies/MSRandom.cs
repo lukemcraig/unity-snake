@@ -35,12 +35,12 @@ public class MSRandom : MovementStrategy {
                 } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
+//                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+//
+//                }
+//                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
+//
+//                }
                 break;
             case 1:
                 if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
@@ -52,12 +52,12 @@ public class MSRandom : MovementStrategy {
                 } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
+//                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+//
+//                }
+//                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
+//
+//                }
                 break;
             case 2:
                 if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
@@ -69,12 +69,12 @@ public class MSRandom : MovementStrategy {
                 } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
+//                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+//
+//                }
+//                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
+//
+//                }
                 break;
             case 3:
                 if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
@@ -86,12 +86,12 @@ public class MSRandom : MovementStrategy {
                 } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
 
                 }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
+//                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
+//
+//                }
+//                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
+//
+//                }
                 break;
             default:
                 break;

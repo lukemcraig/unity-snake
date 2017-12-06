@@ -43,10 +43,11 @@ EgoConstraint<MovementInputComponent, InputQueueComponent>
 	
 	void SetMovementDirection (Vector3 newDir, InputQueueComponent iqc)
 	{
-		if(iqc.lastInput != newDir && iqc.lastInput != -newDir){
+		if(iqc.lastInput != -newDir){
 			iqc.inputQueue.Enqueue (newDir);	
-			var e = new IncrementTickEvent();
-			EgoEvents<IncrementTickEvent>.AddEvent( e );	
+			iqc.lastInput = newDir;
+//			var e = new IncrementTickEvent();
+//			EgoEvents<IncrementTickEvent>.AddEvent( e );	
 		}
 	}
 	

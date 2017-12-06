@@ -9,22 +9,27 @@ public class MyEgoInterface : EgoInterface
         EgoSystems.Add(
         	new CameraProjectionSystem(),
 			new AutoCamSystem(),
-        	//new TickSystem(),
-        	new TurnBasedTickSystem(),
+
+        	new TickSystem(),
+        	//new TurnBasedTickSystem(),
         	new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
+
+			new AgeSystem(),			
+			new SnakePregnancySystem(),
+			new SnakeMaterialSystem(), 
+
 			new AIMoverSystem(),
 			new TimeInputSystem(),
 			new MovementInputSystem(),
 			//new TestRightSystem(),
+
 			new SnakeHeadMovementSystem(),
-			new MovementSystem(),
 			new SnakeParentMovementSystem(),
-			new AgeSystem(),			
-            new SnakePregnancySystem(),
-            new SnakeMaterialSystem(),         
+
 			new EdibleCollisionSystem(),
-			//new ObstacleCollisionSystem(),
+			new ObstacleCollisionSystem(),
+
 			new CommandRecieveSystem(),
 			new FutureErasalSystem()
 			);	    

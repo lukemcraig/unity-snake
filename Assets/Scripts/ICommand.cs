@@ -4,7 +4,25 @@ using UnityEngine;
 
 public abstract class ICommand  {
 
-	public abstract void Execute();
-	public abstract void Undo ();
+	public void ExecuteIfValid(){
+		if(IsExecuteValid ())
+			Execute ();
+	}
+	public void UndoIfValid (){
+		if(IsUndoValid ())
+			Undo ();
+	}
+	protected abstract void Execute ();
+
+	protected virtual void Undo (){
+
+	}
+
+	protected virtual bool IsExecuteValid (){
+		return true;
+	}
+	protected virtual bool IsUndoValid (){
+		return true;
+	}
 
 }
