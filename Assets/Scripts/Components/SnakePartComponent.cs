@@ -4,8 +4,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class SnakePartComponent : MonoBehaviour {
 
-	//public bool isPregnant = false;
-	public SnakePartComponent parentPart;
+	public bool isPregnant = false;
+	//public SnakePartComponent parentPart;
 	public SnakePartComponent childPart;
 	public GameObject snakePrefab;
 	public Material pregnantMaterial;

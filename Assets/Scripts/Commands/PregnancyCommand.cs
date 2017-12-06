@@ -17,7 +17,8 @@ public class PregnancyCommand : ICommand {
 
 
 	
-	protected override void Execute(){        
+	protected override void Execute(){
+        parent.isPregnant = false;
 		if (parent.childPart == null) {			
 			child = Ego.AddGameObject( Object.Instantiate<GameObject>( parent.snakePrefab ) ).GetComponent<SnakePartComponent>();
 			child.snakePrefab = parent.snakePrefab;
@@ -26,22 +27,27 @@ public class PregnancyCommand : ICommand {
 			child.transform.parent = parent.container;
 			child.container = parent.container;
 			parent.childPart = child;
-			child.parentPart = parent;
+			//child.parentPart = parent;
 			createdNew = true;
 		} else {
-            //var pregEvent = new PregnancyEvent(parent.childPart);
-            //EgoEvents<PregnancyEvent>.AddEvent(pregEvent);
-            var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart, position), 1);
-            EgoEvents<CommandEvent>.AddEvent(commandEvent);
             createdNew = false;
+            if (!parent.childPart.isPregnant)
+            {
+                parent.childPart.isPregnant = true;
+                var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart, position), 1);
+                EgoEvents<CommandEvent>.AddEvent(commandEvent);
+            }
+            
         }
 	}
 	
 	protected override void Undo(){
-		if(createdNew){
+
+        if (createdNew){
 			Ego.DestroyGameObject( child.GetComponent<EgoComponent>() );
 			parent.childPart = null;
-		}		
+		}
+
 	}
 	protected override bool IsExecuteValid(){
 		return ( parent != null);
