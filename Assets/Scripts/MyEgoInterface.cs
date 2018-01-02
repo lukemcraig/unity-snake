@@ -7,8 +7,8 @@ public class MyEgoInterface : EgoInterface
 	{
 		//        Add Systems here:
         EgoSystems.Add(
-        	new CameraProjectionSystem(),
-			new AutoCamSystem(),
+        	//new CameraProjectionSystem(),
+			//new AutoCamSystem(),
 
         	new TickSystem(),
         	//new TurnBasedTickSystem(),
@@ -19,7 +19,7 @@ public class MyEgoInterface : EgoInterface
 			new SnakePregnancySystem(),
 			new SnakeMaterialSystem(), 
 
-			new AIMoverSystem(),
+			//new AIMoverSystem(),
 			new TimeInputSystem(),
 			new MovementInputSystem(),
 			//new TestRightSystem(),
