@@ -5110,7 +5110,7 @@ MonoBehaviour:
   reverse: 0
   partialTick: 0
   debugStep: 0
-  pause: 1
+  pause: 0
 --- !u!1 &2108198567
 GameObject:
   m_ObjectHideFlags: 0
