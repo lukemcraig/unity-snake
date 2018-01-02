@@ -2,40 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PregnancyCommand : ICommand {
-	
-	private SnakePartComponent parent;
-	private SnakePartComponent child;
-	private bool createdNew;
-	
-	public PregnancyCommand(SnakePartComponent parent){
-		this.parent = parent;
-	}
-	
-	public override void Execute(){
-		parent.isPregnant=false;
-		if (parent.childPart == null) {			
-			child = Ego.AddGameObject( Object.Instantiate<GameObject>( parent.snakePrefab ) ).GetComponent<SnakePartComponent>();
-			child.snakePrefab = parent.snakePrefab;
-			child.transform.position = parent.transform.position;
-			child.transform.rotation = parent.transform.rotation;
-			child.transform.parent = parent.container;
-			//Ego.SetParent( parent.container.GetComponent<EgoComponent>(), child.GetComponent<EgoComponent>() );
-			child.container = parent.container;
-			parent.childPart = child;
-			createdNew = true;
-		} else {
-            var pregEvent = new PregnancyEvent(parent.childPart);
-            EgoEvents<PregnancyEvent>.AddEvent(pregEvent);
-            createdNew = false;
+public class PregnancyCommand : ICommand
+{
+
+    //private SnakePartComponent grandparent;
+    private SnakePartComponent parent;
+    private SnakePartComponent child;
+    private Vector3 position;
+    private bool setPregnant;
+
+    public PregnancyCommand(SnakePartComponent parent, Vector3 position, bool setPregnant)
+    {
+        this.parent = parent;
+        this.position = position;
+        this.setPregnant =  setPregnant;
+    }
+    
+    protected override void Execute()
+    {
+        Debug.Log("Execute pregnancy");
+        if (setPregnant)
+        {
+            parent.isPregnant = true;
+            if (parent.childPart == null)
+            {
+                var commandEvent = new CommandEvent(new BirthCommand(parent, position), 1);
+                EgoEvents<CommandEvent>.AddEvent(commandEvent);
+                var commandEvent2 = new CommandEvent(new PregnancyCommand(parent, position, false), 1);
+                EgoEvents<CommandEvent>.AddEvent(commandEvent2);
+            }
+            else
+            {
+                if (!parent.childPart.isPregnant)
+                {
+                    var commandEvent = new CommandEvent(new PregnancyCommand(parent.childPart, position, true), 1);
+                    EgoEvents<CommandEvent>.AddEvent(commandEvent);
+                    var commandEvent2 = new CommandEvent(new PregnancyCommand(parent, position, false), 1);
+                    EgoEvents<CommandEvent>.AddEvent(commandEvent2);
+                }
+            }
         }
-	}
-	
-	public override void Undo(){
-		//parent.isPregnant=true;
-		if(createdNew){
-			Ego.DestroyGameObject( child.GetComponent<EgoComponent>() );
-			parent.childPart = null;
-		}		
-	}
+        else
+        {
+            parent.isPregnant = false;
+        }
+    }
+
+    protected override void Undo()
+    {
+        Debug.Log("undo pregnancy");
+        parent.isPregnant = !setPregnant;
+    }
+
+    protected override bool IsExecuteValid()
+    {
+        return (parent != null);
+    }
+    protected override bool IsUndoValid()
+    {
+        return (parent != null);
+    }
 }

@@ -7,31 +7,39 @@ public class MyEgoInterface : EgoInterface
 	{
 		//        Add Systems here:
         EgoSystems.Add(
+        	new CameraProjectionSystem(),
+			new AutoCamSystem(),
+
         	new TickSystem(),
-        	
-			new CommandExecuteSystem(),			
+        	//new TurnBasedTickSystem(),
+        	new CommandExecuteSystem(),			
 			new DelayColliderSystem(),
-			//new AIMoverSystem(),
+
+			new AgeSystem(),			
+			new SnakePregnancySystem(),
+			new SnakeMaterialSystem(), 
+
+			new AIMoverSystem(),
 			new TimeInputSystem(),
 			new MovementInputSystem(),
-			new TestRightSystem(),
+			//new TestRightSystem(),
+
 			new SnakeHeadMovementSystem(),
-			new MovementSystem(),
 			new SnakeParentMovementSystem(),
-			new AgeSystem(),			
-            new SnakePregnancySystem(),
-            new SnakeMaterialSystem(),         
-			new EdibleCollisionSystem(),
-			//new ObstacleCollisionSystem(),
+            new MovementSystem(),
+
+            new EdibleCollisionSystem(),
+			new ObstacleCollisionSystem(),
+
 			new CommandRecieveSystem(),
 			new FutureErasalSystem()
-			);	    
+			);	   
+		EgoEvents.AddFront<ReverseTimeEvent>();
 		EgoEvents.AddFront<TriggerEnterEvent>();
-        EgoEvents.AddFront<TickEvent>();
+        EgoEvents.AddFront<TickEvent>();        
         EgoEvents.AddFront<CommandEvent>();
-		
-		EgoEvents.AddEnd<ReverseTimeEvent>();
-	}
+        EgoEvents.AddFront<PregnancyEvent>();
+    }
     
     void Start()
     {

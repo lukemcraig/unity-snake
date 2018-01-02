@@ -26,7 +26,7 @@ EgoConstraint<TickComponent, CommandManagerComponent>
 					commandManager.commandDictionary.Add(tick.currentTick+e.ticksTillExecution,commandList);
 				}
 				if(e.ticksTillExecution==0){
-					e.command.Execute();
+					e.command.ExecuteIfValid();
 				}
 			});
 	}

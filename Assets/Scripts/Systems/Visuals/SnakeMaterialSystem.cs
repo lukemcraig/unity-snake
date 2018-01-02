@@ -9,20 +9,26 @@ EgoConstraint<SnakePartComponent,AgeComponent, MeshRenderer>
     public override void Update(){    	
         constraint.ForEachGameObject((egoComponent, snakePart, age, renderer) =>
         	{
-        		if (snakePart.isPregnant)
-        		{
-        			renderer.material = snakePart.pregnantMaterial;        			
-        		}
-        		else{
-        			if (age.age == 0)
-        			{
-        				renderer.material = snakePart.newMaterial;        				
-        			}
-        			else if (age.age > 0){
-        				renderer.material = snakePart.normalMaterial;        				
-        			}
-        		}        		
-        	});
+                if (snakePart.isPregnant)
+                {
+                    renderer.material = snakePart.pregnantMaterial;
+                }
+                else
+                {
+                    if (egoComponent.HasComponents<InputQueueComponent>())
+                    {
+                        renderer.material = snakePart.headMaterial;
+                    }
+                    else if (age.age == 0)
+                    {
+                        renderer.material = snakePart.newMaterial;
+                    }
+                    else if (age.age > 0)
+                    {
+                        renderer.material = snakePart.normalMaterial;
+                    }
+                }
+            });
     }
     
 }

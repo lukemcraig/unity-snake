@@ -26,6 +26,7 @@ public class EdibleCollisionSystem : EgoSystem{
     {
 		var commandEvent = new CommandEvent(new EatEdibleCommand(edible, mouth),0);
 		EgoEvents<CommandEvent>.AddEvent(commandEvent);
+        
     }
 
 }

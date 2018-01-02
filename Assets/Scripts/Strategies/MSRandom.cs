@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu (menuName = "Strategies/Movement/Random")]
 public class MSRandom : MovementStrategy {
+
+    System.Random r = new System.Random();
+
     public override void Move(Transform transform,  InputQueueComponent iqc, MovementComponent movement){
         DoRandomStuff(transform, iqc, movement);
     }
@@ -23,79 +26,17 @@ public class MSRandom : MovementStrategy {
             return;
         }
 
-
-        switch (Random.Range(0, 4)) {
-            case 0:
-                if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
-                break;
-            case 1:
-                if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
-                break;
-            case 2:
-                if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
-                break;
-            case 3:
-                if (TryToSetMovementDirection(Vector3.left, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.right, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.forward, iqc.inputQueue, transform)) {
-
-                } else if (TryToSetMovementDirection(Vector3.back, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.up, iqc.inputQueue, transform)) {
-
-                }
-                else if (TryToSetMovementDirection(Vector3.down, iqc.inputQueue, transform)) {
-
-                }
-                break;
-            default:
-                break;
+        List<Vector3> listOfDirections = new List<Vector3>() {Vector3.forward, Vector3.left, Vector3.right, Vector3.back};
+        
+        while (listOfDirections.Count > 0)
+        {
+            int randomIndex = r.Next(0, listOfDirections.Count);
+            Vector3 direction = listOfDirections[randomIndex];
+            listOfDirections.RemoveAt(randomIndex);
+            if (TryToSetMovementDirection(direction, iqc.inputQueue, transform))
+                return;
         }
+
     }
 
     bool TryToSetMovementDirection(Vector3 newDir, Queue<Vector3> inputQueue, Transform transform) {
